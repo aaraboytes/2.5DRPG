@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 3821288478312875094}
   - component: {fileID: 3821288478312875093}
   - component: {fileID: 3821288478312875092}
-  - component: {fileID: 3821288478312875112}
   - component: {fileID: 3821288478312875095}
   - component: {fileID: 3821288478312875113}
   - component: {fileID: 3821288478312875114}
+  - component: {fileID: 8294875313667378668}
   m_Layer: 0
   m_Name: NPC
   m_TagString: Untagged
@@ -99,20 +99,6 @@ MonoBehaviour:
   speed: 1
   timesToChangePos: {x: 2, y: 3}
   walkTime: {x: 0.5, y: 1}
---- !u!136 &3821288478312875112
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3821288478312875091}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.225
-  m_Height: 0.57
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!95 &3821288478312875095
 Animator:
   serializedVersion: 3
@@ -166,3 +152,17 @@ MonoBehaviour:
     sentences:
     - Soy el hombre de los arboles
     - Eso es todo
+--- !u!136 &8294875313667378668
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3821288478312875091}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 2.58
+  m_Height: 9.889999
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}

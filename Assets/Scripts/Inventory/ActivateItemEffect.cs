@@ -32,6 +32,10 @@ public class ActivateItemEffect : MonoBehaviour
             case 3:
                 player.transform.position = new Vector3(0, 10f, 0);
                 break;
+            //EXAMPLE OBJ
+            case 4:
+                Debug.Log("Este item no hace nada");
+                break;
         }
         return false;
     }
