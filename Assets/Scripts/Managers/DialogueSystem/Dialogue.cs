@@ -5,6 +5,7 @@ using UnityEngine;
 public class Dialogue{
     public Sprite photo;
     public string name;
+    public AudioClip audioClip;
     [TextArea(3,6)]
     public string[] sentences;
 }

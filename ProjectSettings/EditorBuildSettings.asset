@@ -8,4 +8,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Hospital/Pasillo_1.unity
+    guid: e2cfa72b4cc22874fbd90982c388b09f
+  - enabled: 1
+    path: Assets/Scenes/Hospital/Pasillo_2.unity
+    guid: 068f455e45108dd41ae7bbce1dfd3cd0
+  - enabled: 1
+    path: Assets/Scenes/Hospital/SalaDeEspera.unity
+    guid: 7564ac2b2ddf3ac4ab9b026ed3ff7373
+  - enabled: 1
+    path: Assets/Scenes/Hospital/Consultorio.unity
+    guid: e65a9f915a10d444c9dc3f4946ac74d5
   m_configObjects: {}

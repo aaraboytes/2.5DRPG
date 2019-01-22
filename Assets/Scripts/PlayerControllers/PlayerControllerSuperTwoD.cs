@@ -7,29 +7,40 @@ public class PlayerControllerSuperTwoD : MonoBehaviour {
     public int health;
 
     int currentHealth = 0;
-    Rigidbody body;
+    CharacterController body;
     Vector3 movement;
     Vector3 direction;
     Animator anim;
+
     public bool paused;
     [SerializeField]
     List<int> items = new List<int>();
     Inventory inventory;
     private void Start()
     {
-        body = GetComponent<Rigidbody>();
+        body = GetComponent<CharacterController>();
         anim = GetComponent<Animator>();
         GameManager._instance.SetCurrentPlayer(this);
         GameManager._instance.LoadSavedElements();
         inventory = FindObjectOfType<Inventory>();
     }
     void Update() {
+        transform.LookAt(Camera.main.transform);
         if (!paused)
         {
-            transform.LookAt(Camera.main.transform);
             #region Player movement
             //Input
             movement = (Vector3.forward * Input.GetAxisRaw("Vertical")) + (Vector3.right * Input.GetAxisRaw("Horizontal"));
+            //Reinsert gravity and add speed
+            movement = movement.normalized * speed * Time.deltaTime;
+            if (body.isGrounded)
+                movement.y = 0;
+            else
+                movement.y = Physics.gravity.y;
+            //Move
+            body.Move(movement);
+            #endregion
+            #region Player movement Animation
             //Direction
             anim.SetBool("moving", Mathf.Abs(movement.x) + Mathf.Abs(movement.z) != 0);
             anim.SetFloat("xVel", -movement.x);
@@ -42,28 +53,34 @@ public class PlayerControllerSuperTwoD : MonoBehaviour {
                 direction = Vector3.right;
             else if (movement.x < 0)
                 direction = -Vector3.right;
-            //Move
-            body.velocity = movement * speed;
+            
             #endregion
-
             #region Interact with objects
             if (Input.GetKeyDown(KeyCode.Z))
             {
                 RaycastHit hit;
                 if (Physics.Raycast(transform.position,direction,out hit,0.5f))
                 {
-                    Debug.Log(hit.collider.name);
-                    if (hit.collider.gameObject.GetComponent<Interactuable>())
+                    GameObject target = hit.collider.gameObject;
+                    //Interact with interactuable objs
+                    if (target.GetComponent<Interactuable>())
                     {
-                        if (hit.collider.gameObject.GetComponent<NPC>())
+                        if (target.GetComponent<Activable>())
                         {
-                            NPC currentNPC = hit.collider.gameObject.GetComponent<NPC>();
+                            Activable act = target.GetComponent<Activable>();
+                            act.Activate();
+                        }
+                        //Speak with NPCs
+                        if (target.GetComponent<NPC>())
+                        {
+                            NPC currentNPC = target.GetComponent<NPC>();
                             currentNPC.StartToTalk();
                             DialogueManger._instance.SetNPC(currentNPC);
                         }
-                        if (hit.collider.gameObject.GetComponent<TookeableItem>())
+                        //Speak with Items and take them
+                        if (target.GetComponent<TookeableItem>())
                         {
-                            TookeableItem tookeableItem = hit.collider.gameObject.GetComponent<TookeableItem>();
+                            TookeableItem tookeableItem = target.GetComponent<TookeableItem>();
                             if (inventory.AddItem())
                             {
                                 AddItem(tookeableItem.item.id);
@@ -74,8 +91,21 @@ public class PlayerControllerSuperTwoD : MonoBehaviour {
                             else
                                 tookeableItem.SetFailureDialogue();
                         }
-                        Interactuable currentInteractuableObj = hit.collider.gameObject.GetComponent<Interactuable>();
-                        DialogueManger._instance.StartConversation(currentInteractuableObj.dialogue);
+                        //Try to open a door
+                        if (target.GetComponent<Door>())
+                        {
+                            Door currentDoor = target.GetComponent<Door>();
+                            if (currentDoor.isDoorOpened)
+                            {
+                                currentDoor.PassDoor();
+                            }
+                        }
+                        Interactuable currentInteractuableObj = target.GetComponent<Interactuable>();
+                        currentInteractuableObj.InitConversation();
+                    }else if (target.GetComponent<Activable>())
+                    {
+                        Activable activable = target.GetComponent<Activable>();
+                        activable.Activate();
                     }
                 }
             }

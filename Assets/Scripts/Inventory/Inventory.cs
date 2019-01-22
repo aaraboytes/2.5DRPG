@@ -105,7 +105,6 @@ public class Inventory : MonoBehaviour
         int[] itemsIds = player.GetItems();
         //Count current carry elements
         currentCarryElements = player.GetNumberOfItems();
-        Debug.Log("Current carry elements are " + currentCarryElements);
         //Fill the list with only the items that the player currently have
         for (int i = 0; i < maxCarryElements; i++)
         {
@@ -113,7 +112,6 @@ public class Inventory : MonoBehaviour
             {
                 if (itemsIds[i] == allItems[k].id)
                 {
-                    Debug.Log("Adding a " + allItems[k].name+"\nThe current i number is "+i+"\nThe current k number is "+k);
                     items.Add(allItems[k]);
                 }
             }
