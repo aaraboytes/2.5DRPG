@@ -40,11 +40,8 @@ public class PlayerControllerSuperTwoD : MonoBehaviour {
             //Move
             body.Move(movement);
             #endregion
-            #region Player movement Animation
+            #region Player direction
             //Direction
-            anim.SetBool("moving", Mathf.Abs(movement.x) + Mathf.Abs(movement.z) != 0);
-            anim.SetFloat("xVel", -movement.x);
-            anim.SetFloat("yVel", movement.z);
             if (movement.z > 0)
                 direction = Vector3.forward;
             else if (movement.z < 0)
@@ -53,7 +50,6 @@ public class PlayerControllerSuperTwoD : MonoBehaviour {
                 direction = Vector3.right;
             else if (movement.x < 0)
                 direction = -Vector3.right;
-            
             #endregion
             #region Interact with objects
             if (Input.GetKeyDown(KeyCode.Z))
@@ -111,6 +107,12 @@ public class PlayerControllerSuperTwoD : MonoBehaviour {
             }
             #endregion
         }
+        #region Animation parameters
+        //Animation
+        anim.SetBool("moving", Mathf.Abs(movement.x) + Mathf.Abs(movement.z) != 0);
+        anim.SetFloat("xVel", -movement.x);
+        anim.SetFloat("yVel", movement.z);
+        #endregion
     }
     #region Save data methods
     public int GetHealth()

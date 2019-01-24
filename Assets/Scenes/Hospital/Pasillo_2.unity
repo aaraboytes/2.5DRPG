@@ -2344,7 +2344,43 @@ PrefabInstance:
     - target: {fileID: 8452085648619728206, guid: 1a2bc6ba734014d4da926591f80f5ed3,
         type: 3}
       propertyPath: m_Text
-      value: Presiona Z para interactuar con las cosas
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8452085649076851788, guid: 1a2bc6ba734014d4da926591f80f5ed3,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: aa44ec0ad1f7cbb468e199fdb809604a,
+        type: 3}
+    - target: {fileID: 8452085649076851789, guid: 1a2bc6ba734014d4da926591f80f5ed3,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8452085649076851789, guid: 1a2bc6ba734014d4da926591f80f5ed3,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8452085649076851789, guid: 1a2bc6ba734014d4da926591f80f5ed3,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8452085649076851789, guid: 1a2bc6ba734014d4da926591f80f5ed3,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.000000014901133
+      objectReference: {fileID: 0}
+    - target: {fileID: 8452085649076851789, guid: 1a2bc6ba734014d4da926591f80f5ed3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -179.99998
+      objectReference: {fileID: 0}
+    - target: {fileID: 8452085649076851789, guid: 1a2bc6ba734014d4da926591f80f5ed3,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.78
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8452085647718849663, guid: 1a2bc6ba734014d4da926591f80f5ed3, type: 3}
