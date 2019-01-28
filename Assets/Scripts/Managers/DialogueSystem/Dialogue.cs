@@ -7,5 +7,5 @@ public class Dialogue{
     public string name;
     public AudioClip audioClip;
     [TextArea(3,6)]
-    public string[] sentences;
+    public string sentence;
 }

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 38415511c96a2fc438f26387ca13f4ea
+guid: 9a8c07917b6ad3144b444b7846172cf3
 TextureImporter:
   fileIDToRecycleName:
     21300000: Mas_Personajes_0
@@ -103,7 +103,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
+        y: 44
         width: 116
         height: 266
       alignment: 0
@@ -113,47 +113,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cb52d3655b6ffba46908f47e0ff98018
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Mas_Personajes_1
-      rect:
-        serializedVersion: 2
-        x: 28
-        y: 1
-        width: 24
-        height: 49
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 56a8e07bcea7b7244b635624f918320f
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Mas_Personajes_2
-      rect:
-        serializedVersion: 2
-        x: 62
-        y: 0
-        width: 24
-        height: 49
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1726c7f119e7c31478f4925660a326e1
+      spriteID: 8c5df5aaa73f43e4eb743c2c50516004
       vertices: []
       indices: 
       edges: []
@@ -162,10 +122,10 @@ TextureImporter:
       name: Mas_Personajes_3
       rect:
         serializedVersion: 2
-        x: 93
-        y: 1
-        width: 252
-        height: 314
+        x: 143
+        y: 44
+        width: 244
+        height: 315
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -173,7 +133,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bcc4bf6a538bd134db540637869c5d9e
+      spriteID: 8678988be5a8fed45b6abda7ba513f08
       vertices: []
       indices: 
       edges: []
@@ -181,7 +141,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 90484789a07a1dc4aa3c5899de065eb1
+    spriteID: 22ede2d0c2d6af843813ca505afeb691
     vertices: []
     indices: 
     edges: []

@@ -456,6 +456,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: addc536554224d84688f176c213c1e16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
   offset: {x: 0, y: 2, z: -5}
   horizontalLimits: {x: -2.2, y: 2.2}
   verticalLimits: {x: -5, y: 0}
@@ -2109,6 +2110,11 @@ PrefabInstance:
     - target: {fileID: 2416546820615787815, guid: 88fd66bf67fb52f439520519b84ff8c8,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2416546820985876609, guid: 88fd66bf67fb52f439520519b84ff8c8,
+        type: 3}
+      propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

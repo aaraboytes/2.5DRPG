@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class FollowCamera : MonoBehaviour {
-    Transform player;
+    public Transform player = null;
     public Vector3 offset;
     public Vector2 horizontalLimits;
     public Vector2 verticalLimits;
     public float speed;
 	void Start () {
-        player = Transform.FindObjectOfType<PlayerControllerSuperTwoD>().transform;
+        if(player == null)
+            player = Transform.FindObjectOfType<PlayerControllerSuperTwoD>().transform;
 	}
 
 	void Update () {
@@ -29,5 +30,11 @@ public class FollowCamera : MonoBehaviour {
     {
         Debug.Log("New target adquired " + transform.gameObject.name);
         player = transform;
+    }
+
+    public void SetNewPosition(Transform newPosition)
+    {
+        transform.position = newPosition.position;
+        transform.rotation = newPosition.rotation;
     }
 }

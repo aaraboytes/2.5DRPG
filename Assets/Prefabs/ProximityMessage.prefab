@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 8452085647718849649}
   - component: {fileID: 8452085647718849650}
   - component: {fileID: 8452085647718849651}
-  - component: {fileID: 8452085647718849663}
   m_Layer: 0
   m_Name: ProximityMessage
   m_TagString: Untagged
@@ -28,7 +27,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8452085647718849653}
-  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0.00000029802322}
+  m_LocalRotation: {x: 0, y: 1, z: -0, w: -0.0000001872535}
   m_LocalPosition: {x: 0, y: 0, z: -0.04651642}
   m_LocalScale: {x: 0.0010475648, y: 0.0010475648, z: 0.0010475648}
   m_Children:
@@ -118,18 +117,6 @@ MonoBehaviour:
   minDistance: 1.5
   messageText: {fileID: 8452085648619728206}
   messageImage: {fileID: 8452085649076851788}
---- !u!114 &8452085647718849663
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8452085647718849653}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07d5303b307213f46b90cec0412405e5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &8452085648619728192
 GameObject:
   m_ObjectHideFlags: 0
@@ -208,7 +195,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Message
+  m_Text: Presiona I para acceder a tu inventario
 --- !u!1 &8452085649076851790
 GameObject:
   m_ObjectHideFlags: 0

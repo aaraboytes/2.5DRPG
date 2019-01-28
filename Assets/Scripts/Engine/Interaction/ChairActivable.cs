@@ -6,6 +6,7 @@ public class ChairActivable : Activable
 {
     public Transform sitPosition;
     public Dialogue dialogue;
+    public GameEvent goToNextRoom;
     PlayerControllerSuperTwoD player;
     private void Start()
     {
@@ -18,11 +19,11 @@ public class ChairActivable : Activable
         //Sit the player
         player.transform.position = sitPosition.position;
         player.paused = true;
-        player.gameObject.GetComponent<Animator>().SetFloat("yVel", -0.1f);
-        player.gameObject.GetComponent<Animator>().SetFloat("xVel", 0);
-        player.gameObject.GetComponent<Animator>().SetBool("moving", false);
+        player.gameObject.GetComponent<Animator>().SetInteger("up", 1);
+        player.gameObject.GetComponent<Animator>().SetInteger("up", 0);
         fader.FadeIn();
         //Start dialogue with Dr.
+        DialogueManger._instance.AddEvent(goToNextRoom);
         DialogueManger._instance.StartConversation(dialogue);
     }
 }

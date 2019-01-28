@@ -5,17 +5,20 @@ using UnityEngine;
 public class PlayerControllerSuperTwoD : MonoBehaviour {
     public float speed;
     public int health;
+    public GameObject z;
 
     int currentHealth = 0;
     CharacterController body;
     Vector3 movement;
     Vector3 direction;
     Animator anim;
+    bool hitting = false;
 
     public bool paused;
     [SerializeField]
     List<int> items = new List<int>();
     Inventory inventory;
+
     private void Start()
     {
         body = GetComponent<CharacterController>();
@@ -52,66 +55,88 @@ public class PlayerControllerSuperTwoD : MonoBehaviour {
                 direction = -Vector3.right;
             #endregion
             #region Interact with objects
-            if (Input.GetKeyDown(KeyCode.Z))
+            RaycastHit hit;
+            if(Physics.Raycast(transform.position,direction,out hit, 0.5f))
             {
-                RaycastHit hit;
-                if (Physics.Raycast(transform.position,direction,out hit,0.5f))
+                GameObject target = hit.collider.gameObject;
+                if (target.GetComponent<Interactuable>() || target.GetComponent<Activable>())
                 {
-                    GameObject target = hit.collider.gameObject;
-                    //Interact with interactuable objs
-                    if (target.GetComponent<Interactuable>())
+                    if (!z.activeInHierarchy)
                     {
-                        if (target.GetComponent<Activable>())
-                        {
-                            Activable act = target.GetComponent<Activable>();
-                            act.Activate();
-                        }
-                        //Speak with NPCs
-                        if (target.GetComponent<NPC>())
-                        {
-                            NPC currentNPC = target.GetComponent<NPC>();
-                            currentNPC.StartToTalk();
-                            DialogueManger._instance.SetNPC(currentNPC);
-                        }
-                        //Speak with Items and take them
-                        if (target.GetComponent<TookeableItem>())
-                        {
-                            TookeableItem tookeableItem = target.GetComponent<TookeableItem>();
-                            if (inventory.AddItem())
-                            {
-                                AddItem(tookeableItem.item.id);
-                                inventory.ClearInventory();
-                                inventory.InitializeInventory();
-                                tookeableItem.SetSuccessDialogue();
-                            }
-                            else
-                                tookeableItem.SetFailureDialogue();
-                        }
-                        //Try to open a door
-                        if (target.GetComponent<Door>())
-                        {
-                            Door currentDoor = target.GetComponent<Door>();
-                            if (currentDoor.isDoorOpened)
-                            {
-                                currentDoor.PassDoor();
-                            }
-                        }
-                        Interactuable currentInteractuableObj = target.GetComponent<Interactuable>();
-                        currentInteractuableObj.InitConversation();
-                    }else if (target.GetComponent<Activable>())
-                    {
-                        Activable activable = target.GetComponent<Activable>();
-                        activable.Activate();
+                        z.SetActive(true);
                     }
+                    hitting = true;
+                }
+            }
+            else
+            {
+                if (hitting)
+                {
+                    hitting = false;
+                }
+            }
+            if(z.activeInHierarchy)
+                z.GetComponent<Animator>().SetBool("Visible", hitting);
+
+            if (Input.GetKeyDown(KeyCode.Z) && hitting)
+            {
+                GameObject target = hit.collider.gameObject;
+                //Interact with interactuable objs
+                if (target.GetComponent<Interactuable>())
+                {
+                    if (target.GetComponent<Activable>())
+                    {
+                        Activable act = target.GetComponent<Activable>();
+                        act.Activate();
+                    }
+                    //Speak with NPCs
+                    if (target.GetComponent<NPC>())
+                    {
+                        NPC currentNPC = target.GetComponent<NPC>();
+                        currentNPC.StartToTalk();
+                        DialogueManger._instance.SetNPC(currentNPC);
+                    }
+                    //Speak with Items and take them
+                    if (target.GetComponent<TookeableItem>())
+                    {
+                        TookeableItem tookeableItem = target.GetComponent<TookeableItem>();
+                        if (inventory.AddItem())
+                        {
+                            AddItem(tookeableItem.item.id);
+                            inventory.ClearInventory();
+                            inventory.InitializeInventory();
+                            tookeableItem.SetSuccessDialogue();
+                        }
+                        else
+                            tookeableItem.SetFailureDialogue();
+                    }
+                    //Try to open a door
+                    if (target.GetComponent<Door>())
+                    {
+                        Door currentDoor = target.GetComponent<Door>();
+                        if (currentDoor.isDoorOpened)
+                        {
+                            currentDoor.PassDoor();
+                        }
+                    }
+                    Interactuable currentInteractuableObj = target.GetComponent<Interactuable>();
+                    currentInteractuableObj.InitConversation();
+                }else if (target.GetComponent<Activable>())
+                {
+                    Activable activable = target.GetComponent<Activable>();
+                    activable.Activate();
                 }
             }
             #endregion
         }
         #region Animation parameters
         //Animation
-        anim.SetBool("moving", Mathf.Abs(movement.x) + Mathf.Abs(movement.z) != 0);
-        anim.SetFloat("xVel", -movement.x);
-        anim.SetFloat("yVel", movement.z);
+        if(paused)
+            anim.SetBool("moving", false);
+        else
+            anim.SetBool("moving", Mathf.Abs(movement.x) + Mathf.Abs(movement.z) != 0);
+        anim.SetInteger("right", (int)-Input.GetAxisRaw("Horizontal"));
+        anim.SetInteger("up", (int)Input.GetAxisRaw("Vertical"));
         #endregion
     }
     #region Save data methods

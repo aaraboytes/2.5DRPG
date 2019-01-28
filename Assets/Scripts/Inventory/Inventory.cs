@@ -26,10 +26,6 @@ public class Inventory : MonoBehaviour
     {
         player = FindObjectOfType<PlayerControllerSuperTwoD>();
     }
-    private void Start()
-    {
-       
-    }
     public void InitializeInventory()
     {
         UpdateInventory();

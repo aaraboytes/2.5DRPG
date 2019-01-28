@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 6152702241000187134}
   - component: {fileID: 6152702241000187073}
   - component: {fileID: 6152702241000187072}
-  - component: {fileID: 6152702241000187075}
   - component: {fileID: 635505378}
   - component: {fileID: 2054723903318299737}
   - component: {fileID: 3065297509788604730}
+  - component: {fileID: 3928352289185826210}
   m_Layer: 0
   m_Name: Apple
   m_TagString: Untagged
@@ -110,22 +110,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: 7234879227e1be64399a73944880b12d, type: 2}
---- !u!114 &6152702241000187075
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6152702241000187076}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 25f0b44e40b897b4c9e2f25e3743b90d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogue:
-    photo: {fileID: 0}
-    name: 
-    sentences: []
 --- !u!54 &635505378
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -170,3 +154,20 @@ CapsuleCollider:
   m_Height: 40.24018
   m_Direction: 1
   m_Center: {x: 0, y: 8.84009, z: 0}
+--- !u!114 &3928352289185826210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6152702241000187076}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07f9da55a2d4ba44e859225ba5cbc884, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    photo: {fileID: 0}
+    name: 
+    audioClip: {fileID: 0}
+    sentences: []

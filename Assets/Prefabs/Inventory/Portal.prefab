@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 5965907314564833460}
   - component: {fileID: 5965907314564833419}
   - component: {fileID: 5965907314564833418}
-  - component: {fileID: 5965907314564833417}
   - component: {fileID: 552222082255769256}
   - component: {fileID: 552222082679333688}
   - component: {fileID: 552222082679333689}
+  - component: {fileID: 1104533185}
   m_Layer: 0
   m_Name: Portal
   m_TagString: Untagged
@@ -110,22 +110,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: 0ed01069cb9dd8540acf310a6159d2c6, type: 2}
---- !u!114 &5965907314564833417
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5965907314564833422}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 25f0b44e40b897b4c9e2f25e3743b90d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogue:
-    photo: {fileID: 0}
-    name: 
-    sentences: []
 --- !u!54 &552222082255769256
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -170,3 +154,20 @@ CapsuleCollider:
   m_Height: 4.9999995
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1104533185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5965907314564833422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07f9da55a2d4ba44e859225ba5cbc884, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    photo: {fileID: 0}
+    name: 
+    audioClip: {fileID: 0}
+    sentences: []

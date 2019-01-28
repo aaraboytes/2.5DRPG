@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour {
     public static GameManager _instance;
+    //Player
     PlayerData currentPlayerData;
     PlayerControllerSuperTwoD player;
     Vector3 playerPos;
+    //Audio
+    AudioSource audio;
+
     private void Awake()
     {
         if (_instance == null)
@@ -17,8 +21,13 @@ public class GameManager : MonoBehaviour {
     }
     private void Start()
     {
-        playerPos = player.transform.position;
+        if (player == null)
+            player = FindObjectOfType<PlayerControllerSuperTwoD>();
+        if (player)
+            playerPos = player.transform.position;
+        audio = GetComponent<AudioSource>();
     }
+    #region Load player info
     public void SetCurrentPlayerData(PlayerData pd)
     {
         currentPlayerData = pd;
@@ -36,12 +45,26 @@ public class GameManager : MonoBehaviour {
         player.SetItems(pd.items);
         FindObjectOfType<Inventory>().InitializeInventory();
     }
+    #endregion
+    #region Transition between scenes
     public void SetNextPlayerPosition(Vector3 nextPlayerPos)
     {
         playerPos = nextPlayerPos;
     }
     public void SetPlayerPosition()
     {
-        player.gameObject.transform.position = playerPos;
+        if (player == null)
+            player = FindObjectOfType<PlayerControllerSuperTwoD>();
+        if(player)
+            player.gameObject.transform.position = playerPos;
     }
+    #endregion
+    #region Audio
+    public void SetBGMusic(AudioClip music)
+    {
+        audio.clip = music;
+    }
+    public void PlayBGMusic() { audio.loop = true; audio.Play(); }
+    public void StopBGMusic() { audio.Stop(); }
+    #endregion
 }

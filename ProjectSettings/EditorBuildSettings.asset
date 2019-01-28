@@ -20,4 +20,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Hospital/Consultorio.unity
     guid: e65a9f915a10d444c9dc3f4946ac74d5
+  - enabled: 1
+    path: Assets/Scenes/Hospital/ConsultorioPensamientos.unity
+    guid: e6d4b1670fc7b0b40b3786d1291b3d1c
+  - enabled: 1
+    path: Assets/Scenes/Hospital/ConsultorioPortal.unity
+    guid: 82b5efdd6eaa2a34ab5b0ef3adbfd174
+  - enabled: 1
+    path: Assets/Scenes/Forest/BlackHoleDimension.unity
+    guid: b11b425ea8ac13048a7801a3872bdb0a
   m_configObjects: {}

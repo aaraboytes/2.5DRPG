@@ -15,9 +15,10 @@ public class DialogueManger : MonoBehaviour {
 
     NPC currentNPC = null;
     bool isTalking = false;
+
     //FIFO collections
     Queue<GameEvent> events;
-    Queue<string> sentences;
+    Queue<Dialogue> dialogues;
 
     private void Awake()
     {
@@ -25,9 +26,9 @@ public class DialogueManger : MonoBehaviour {
     }
     void Start () {
         audio = GetComponent<AudioSource>();
-        sentences = new Queue<string>();
+        dialogues = new Queue<Dialogue>();
         events = new Queue<GameEvent>();
-        sentences.Clear();
+        dialogues.Clear();
         dialogueBox.SetActive(false);
 	}
     private void Update()
@@ -41,18 +42,20 @@ public class DialogueManger : MonoBehaviour {
     public void StartConversation(Dialogue dialogue)
     {
         //Initialize
-        FindObjectOfType<PlayerControllerSuperTwoD>().paused = true;
-        FindObjectOfType<PlayerControllerSuperTwoD>().gameObject.GetComponent<Animator>().SetBool("moving", false);
+        PlayerControllerSuperTwoD player = FindObjectOfType<PlayerControllerSuperTwoD>();
+        if (player)
+        {
+            player.paused = true;
+            player.gameObject.GetComponent<Animator>().SetBool("moving", false);
+        }
         ResetDialogueSystem();
         //Setup in UI
         dialogueBox.SetActive(true);
-        name.text = dialogue.name;
-        photo.sprite = dialogue.photo;
-        clip = dialogue.audioClip;
+        
         //Add sentences to FIFO collection
-        foreach (string sentence in dialogue.sentences)
+        foreach (Dialogue d in dialogues)
         {
-            sentences.Enqueue(sentence);
+            dialogues.Enqueue(d);
         }
         //Start with first dialogue
         NextSentence();
@@ -60,25 +63,33 @@ public class DialogueManger : MonoBehaviour {
     }
     public void NextSentence()
     {
-        if (sentences.Count == 0)
+        if (dialogues.Count == 0)
         {
             Debug.Log("Conversation has ended");
             EndConversation();
             return;
         }
+        
+        Dialogue dialogue = dialogues.Dequeue();
+        name.text = dialogue.name;
+        photo.sprite = dialogue.photo;
+        clip = dialogue.audioClip;
+
         audio.clip = clip;
         audio.Play();
-        string sentence = sentences.Dequeue();
+
         StopAllCoroutines();
-        StartCoroutine(TypeSentence(sentence));
+        StartCoroutine(TypeSentence(dialogue.sentence));
     }
     void EndConversation()
     {
         //Clean sentences
-        sentences.Clear();
+        dialogues.Clear();
 
         dialogueBox.SetActive(false);
-        FindObjectOfType<PlayerControllerSuperTwoD>().paused = false;
+        PlayerControllerSuperTwoD player = FindObjectOfType<PlayerControllerSuperTwoD>();
+        if (player)
+            player.paused = false;
         isTalking = false;
 
         //End Conversation with npc
@@ -92,6 +103,9 @@ public class DialogueManger : MonoBehaviour {
             ResetDialogueSystem();
             Invoke("ExecuteEvent", 0.5f);
         }
+
+        //End audio if is still playing
+        audio.Stop();
     }
     IEnumerator TypeSentence(string sentence)
     {
@@ -105,7 +119,7 @@ public class DialogueManger : MonoBehaviour {
     }
     public void ResetDialogueSystem()
     {
-        sentences = new Queue<string>();
+        dialogues = new Queue<Dialogue>();
         dialogueBox.SetActive(false);
     }
     #endregion

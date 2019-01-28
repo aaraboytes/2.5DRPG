@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 5782369593892911490}
   - component: {fileID: 5782369593892911549}
   - component: {fileID: 5782369593892911548}
-  - component: {fileID: 5782369593892911551}
   - component: {fileID: 386694480225392542}
   - component: {fileID: 1716193799706065010}
   - component: {fileID: 7604278915641198399}
+  - component: {fileID: 1324793531}
   m_Layer: 0
   m_Name: Poison
   m_TagString: Untagged
@@ -110,22 +110,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: 066a63484daa1cd46b4bea8aeda4ecb1, type: 2}
---- !u!114 &5782369593892911551
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5782369593892911544}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 25f0b44e40b897b4c9e2f25e3743b90d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogue:
-    photo: {fileID: 0}
-    name: 
-    sentences: []
 --- !u!54 &386694480225392542
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -170,3 +154,20 @@ CapsuleCollider:
   m_Height: 7.765142
   m_Direction: 1
   m_Center: {x: 0, y: 1.6775717, z: 0}
+--- !u!114 &1324793531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5782369593892911544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07f9da55a2d4ba44e859225ba5cbc884, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    photo: {fileID: 0}
+    name: 
+    audioClip: {fileID: 0}
+    sentences: []
