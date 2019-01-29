@@ -793,13 +793,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2c13a170f74a7c43ae0662f1fe850c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogue:
-    photo: {fileID: 21300008, guid: 73b66bf1ab01490429631898538dfee4, type: 3}
+  conversation:
+  - photo: {fileID: 21300012, guid: 7cd552900f8df054595fc18d446d930b, type: 3}
     name: 
     audioClip: {fileID: 0}
-    sentences:
-    - "En serio, \xBFQu\xE9 fue eso?"
-    - "\xBFHola? \xBFHay alguien ah\xED?"
+    sentence: "\xBFQu\xE9?\xBFQu\xE9 fue eso?"
+    mental: 0
+  - photo: {fileID: 21300012, guid: 7cd552900f8df054595fc18d446d930b, type: 3}
+    name: 
+    audioClip: {fileID: 0}
+    sentence: "\xBFHola? \xBFHay alguien ah\xED?"
+    mental: 0
   objToBeTriggered: {fileID: 1570166151}
   triggersName: move
 --- !u!1 &371767987
@@ -1590,17 +1594,17 @@ PrefabInstance:
     - target: {fileID: 8247352975570609937, guid: 9b8ea7f0a71365a4cb304d96357bb2b5,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 18.24
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8247352975570609937, guid: 9b8ea7f0a71365a4cb304d96357bb2b5,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.82
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8247352975570609937, guid: 9b8ea7f0a71365a4cb304d96357bb2b5,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -36.02
+      value: -4
       objectReference: {fileID: 0}
     - target: {fileID: 8247352975570609937, guid: 9b8ea7f0a71365a4cb304d96357bb2b5,
         type: 3}
@@ -5416,12 +5420,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2c13a170f74a7c43ae0662f1fe850c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogue:
-    photo: {fileID: 21300008, guid: 73b66bf1ab01490429631898538dfee4, type: 3}
+  conversation:
+  - photo: {fileID: 21300012, guid: 7cd552900f8df054595fc18d446d930b, type: 3}
     name: 
     audioClip: {fileID: 0}
-    sentences:
-    - "\xBFEh? \xBFQu\xE9 fue eso?"
+    sentence: Creo que acabo de escuchar algo
+    mental: 0
   objToBeTriggered: {fileID: 1570166151}
   triggersName: move
 --- !u!1 &1981794199
@@ -5560,13 +5564,59 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07f9da55a2d4ba44e859225ba5cbc884, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogue:
-    photo: {fileID: 21300000, guid: 372a7882094fb7e4181b3537d5ab29ad, type: 3}
+  conversation:
+  - photo: {fileID: 21300012, guid: 7cd552900f8df054595fc18d446d930b, type: 3}
     name: 
+    audioClip: {fileID: 8300000, guid: c19a5850ad7ada6458d6a573ed492111, type: 3}
+    sentence: "\xBFQu\xE9 demonios?\xBFQuien...qu\xE9... eres tu?"
+    mental: 0
+  - photo: {fileID: 21300000, guid: 372a7882094fb7e4181b3537d5ab29ad, type: 3}
+    name: ???
     audioClip: {fileID: 0}
-    sentences:
-    - 
-    - 
+    sentence: No temas, estoy en paz
+    mental: 1
+  - photo: {fileID: 21300012, guid: 7cd552900f8df054595fc18d446d930b, type: 3}
+    name: 
+    audioClip: {fileID: 8300000, guid: c19a5850ad7ada6458d6a573ed492111, type: 3}
+    sentence: "\xBFQu\xE9? \xBFQui\xE9n dijo eso?\xBFEso fue dentro de... mi mente?"
+    mental: 0
+  - photo: {fileID: 21300000, guid: 372a7882094fb7e4181b3537d5ab29ad, type: 3}
+    name: ???
+    audioClip: {fileID: 0}
+    sentence: "As\xED es, por lo que veo no eres de esta \xE9poca, el lenguaje auditivo
+      dejo de ser \xFAtil hace mucho tiempo."
+    mental: 1
+  - photo: {fileID: 21300000, guid: 372a7882094fb7e4181b3537d5ab29ad, type: 3}
+    name: F24
+    audioClip: {fileID: 0}
+    sentence: "Tranquilo, no te hare da\xF1o, mi nombre es F24."
+    mental: 1
+  - photo: {fileID: 21300012, guid: 7cd552900f8df054595fc18d446d930b, type: 3}
+    name: 
+    audioClip: {fileID: 8300000, guid: c19a5850ad7ada6458d6a573ed492111, type: 3}
+    sentence: "Eh... esta bien, muchas gracias...F24, \xBFme podr\xEDas decir donde
+      estoy?"
+    mental: 0
+  - photo: {fileID: 21300000, guid: 372a7882094fb7e4181b3537d5ab29ad, type: 3}
+    name: ???
+    audioClip: {fileID: 0}
+    sentence: No temas, estoy en paz
+    mental: 1
+  - photo: {fileID: 21300000, guid: 372a7882094fb7e4181b3537d5ab29ad, type: 3}
+    name: ???
+    audioClip: {fileID: 0}
+    sentence: No temas, estoy en paz
+    mental: 1
+  - photo: {fileID: 21300000, guid: 372a7882094fb7e4181b3537d5ab29ad, type: 3}
+    name: ???
+    audioClip: {fileID: 0}
+    sentence: No temas, estoy en paz
+    mental: 1
+  - photo: {fileID: 21300000, guid: 372a7882094fb7e4181b3537d5ab29ad, type: 3}
+    name: ???
+    audioClip: {fileID: 0}
+    sentence: No temas, estoy en paz
+    mental: 1
 --- !u!65 &1996861635
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5759,12 +5809,12 @@ MonoBehaviour:
   - {fileID: 831681370}
   - {fileID: 1298519426}
   numberOfApples: 3
-  treeDialogue:
-    photo: {fileID: 21300008, guid: 73b66bf1ab01490429631898538dfee4, type: 3}
+  treeConversation:
+  - photo: {fileID: 21300012, guid: 7cd552900f8df054595fc18d446d930b, type: 3}
     name: 
     audioClip: {fileID: 0}
-    sentences:
-    - Parece que se ha quedado sin manzanas.
+    sentence: Parece que el arbol se ha quedado sin manzanas
+    mental: 0
 --- !u!1 &8504310881734491925
 GameObject:
   m_ObjectHideFlags: 0

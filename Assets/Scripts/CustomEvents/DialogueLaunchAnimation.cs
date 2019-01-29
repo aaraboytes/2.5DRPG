@@ -18,13 +18,13 @@ class AnimationLauncher : GameEvent
 }
 public class DialogueLaunchAnimation : GameEvent
 {
-    public Dialogue dialogue;
+    public Dialogue[] conversation;
     public GameObject objToBeTriggered;
     public string triggersName;
     public override void StartEvent()
     {
         AnimationLauncher animationLauncher = new AnimationLauncher(objToBeTriggered,triggersName);
         DialogueManger._instance.AddEvent(animationLauncher);
-        DialogueManger._instance.StartConversation(dialogue);
+        DialogueManger._instance.StartConversation(conversation);
     }
 }

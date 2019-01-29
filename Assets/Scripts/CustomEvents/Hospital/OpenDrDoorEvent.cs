@@ -6,9 +6,9 @@ public class OpenDrDoorEvent : GameEvent
 {
     public Transform drDoor;
     [Header("Secretaria")]
-    public Dialogue dialogue;
+    public Dialogue[] conversation;
     public Interactuable secretary;
-    public Dialogue newSecretaryDialogue;
+    public Dialogue[] newSecretaryConversation;
     [Header("Evento adicional")]
     public GameEvent focusOnPlayer;
 
@@ -20,9 +20,9 @@ public class OpenDrDoorEvent : GameEvent
         Camera.main.gameObject.GetComponent<FollowCamera>().speed = 0.05f;
         Camera.main.gameObject.GetComponent<FollowCamera>().SetTarget(drDoor);
         //Start conversation with secretary
-        DialogueManger._instance.StartConversation(dialogue);
+        DialogueManger._instance.StartConversation(conversation);
         DialogueManger._instance.AddEvent(focusOnPlayer);
         //Change dialogue to secretary
-        secretary.dialogue = newSecretaryDialogue;
+        secretary.conversation = newSecretaryConversation;
     }
 }

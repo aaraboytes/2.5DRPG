@@ -7,7 +7,7 @@ public class TreeActivable : Activable
     public GameObject apple;
     public Transform[] appleSpawner;
     public int numberOfApples;
-    public Dialogue treeDialogue;
+    public Dialogue[] treeConversation;
     public override void Activate()
     {
         numberOfApples--;
@@ -17,7 +17,7 @@ public class TreeActivable : Activable
         }
         else
         {
-            DialogueManger._instance.StartConversation(treeDialogue);
+            DialogueManger._instance.StartConversation(treeConversation);
         }
     }
 }

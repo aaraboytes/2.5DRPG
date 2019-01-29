@@ -8,4 +8,5 @@ public class Dialogue{
     public AudioClip audioClip;
     [TextArea(3,6)]
     public string sentence;
+    public bool mental = false;
 }

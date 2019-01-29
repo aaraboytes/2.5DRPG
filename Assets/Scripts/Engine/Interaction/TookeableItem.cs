@@ -15,9 +15,9 @@ public class TookeableItem : MonoBehaviour
         Dialogue dialogue = new Dialogue();
         dialogue.name = item.name;
         dialogue.photo = item.itemImg;
-        dialogue.sentences = new string[1];
-        dialogue.sentences[0] = ("Has recogido un " + item.name);
-        interact.dialogue = dialogue;
+        dialogue.sentence = "Has recogido un " + item.name;
+        interact.conversation = new Dialogue[1];
+        interact.conversation[0] = dialogue;
         gameObject.SetActive(false);
     }
     public void SetFailureDialogue()
@@ -25,8 +25,8 @@ public class TookeableItem : MonoBehaviour
         Dialogue dialogue = new Dialogue();
         dialogue.name = item.name;
         dialogue.photo = item.itemImg;
-        dialogue.sentences = new string[1];
-        dialogue.sentences[0] = ("Parece que no tienes mas espacio en tu inventario");
-        interact.dialogue = dialogue;
+        dialogue.sentence = "Parece que no tienes mas espacio en tu inventario";
+        interact.conversation = new Dialogue[1];
+        interact.conversation[0] = dialogue;
     }
 }

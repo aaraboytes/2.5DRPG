@@ -532,12 +532,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   portal: {fileID: 1542241837}
-  dialogue:
-    photo: {fileID: 21300012, guid: 7cd552900f8df054595fc18d446d930b, type: 3}
+  conversation:
+  - photo: {fileID: 21300012, guid: 7cd552900f8df054595fc18d446d930b, type: 3}
     name: 
     audioClip: {fileID: 0}
-    sentences:
-    - "\xBFQu\xE9 es eso?...Luce como...."
+    sentence: "...eh...\xBFQu\xE9 es eso?"
+    mental: 1
   increasePortal: {fileID: 1956374060}
   newCamPos: {fileID: 605381028}
   portalMusic: {fileID: 8300000, guid: 7717cbc648d11c042bf8e200ac5fa6f2, type: 3}
@@ -655,18 +655,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sitPosition: {fileID: 2066167925}
-  dialogue:
-    photo: {fileID: 21300002, guid: e1959731c7117a34a836fcd9ff0b8ceb, type: 3}
-    name: Dr. Williams
-    audioClip: {fileID: 8300000, guid: 3c9d86034a4b28044abea670e06c2538, type: 3}
-    sentences:
-    - Los resultados ya salieron, me los dieron ayer por la tarde.
-    - "Estuve revisandolos ayer y bueno... Parece ser que el diagn\xF3stico anterior
-      estaba equivocado."
-    - "Esto debido a que los s\xEDntomas son identicos, sin embargo con las nuevas
-      pruebas y examenes que se le han hecho los resultados arrojaron otra cosa."
-    - "Lo mejor es que vaya por los papeles para poder hablar con m\xE1s tranquilidad,
-      le pido espere aqu\xED mientras voy con la secretaria por ellos."
+  conversation: []
   goToNextRoom: {fileID: 0}
 --- !u!4 &259037554 stripped
 Transform:
@@ -855,13 +844,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee90bbb99f2d70142a46ec081141117a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogue:
-    photo: {fileID: 21300012, guid: 7cd552900f8df054595fc18d446d930b, type: 3}
+  conversation:
+  - photo: {fileID: 21300012, guid: 7cd552900f8df054595fc18d446d930b, type: 3}
     name: 
     audioClip: {fileID: 0}
-    sentences:
-    - Espero las cosas mejoren.
-    - Mis expectativas son altas.
+    sentence: Espero que los resultados sean buenos, ya quiero dejar de venir a este
+      lugar.
+    mental: 1
 --- !u!1 &329699945
 GameObject:
   m_ObjectHideFlags: 0
@@ -1278,13 +1267,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee90bbb99f2d70142a46ec081141117a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogue:
-    photo: {fileID: 21300012, guid: 7cd552900f8df054595fc18d446d930b, type: 3}
+  conversation:
+  - photo: {fileID: 21300012, guid: 7cd552900f8df054595fc18d446d930b, type: 3}
     name: 
     audioClip: {fileID: 0}
-    sentences:
-    - Sin duda el doctor ha sido una persona amable todo este tiempo conmigo.
-    - Espero seguir frecuentandolo fuera de su trabajo.
+    sentence: Tengo esperanzas de que al fin sean buenas noticias.
+    mental: 1
 --- !u!4 &787864788
 Transform:
   m_ObjectHideFlags: 0
@@ -1330,12 +1318,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07f9da55a2d4ba44e859225ba5cbc884, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogue:
-    photo: {fileID: 21300000, guid: 9a8c07917b6ad3144b444b7846172cf3, type: 3}
+  conversation:
+  - photo: {fileID: 21300000, guid: 9a8c07917b6ad3144b444b7846172cf3, type: 3}
     name: Esqueleto
-    audioClip: {fileID: 0}
-    sentences:
-    - Es una replica de un esqueleto
+    audioClip: {fileID: 8300000, guid: f9f5b1fbda8b39d4c94ee7c523434a25, type: 3}
+    sentence: '...'
+    mental: 0
 --- !u!136 &841450176
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2005,13 +1993,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee90bbb99f2d70142a46ec081141117a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogue:
-    photo: {fileID: 21300012, guid: 7cd552900f8df054595fc18d446d930b, type: 3}
+  conversation:
+  - photo: {fileID: 21300012, guid: 7cd552900f8df054595fc18d446d930b, type: 3}
     name: 
     audioClip: {fileID: 0}
-    sentences:
-    - "Me pregunto si el doctor tardar\xE1 mucho"
-    - Es posible que finalmente deba dejar de venir.
+    sentence: "Sin duda el doctor ha sido una persona agradable todo este tiempo,
+      me gustar\xEDa seguir contact\xE1ndolo si salgo de aqu\xED."
+    mental: 1
 --- !u!1 &1355877096
 GameObject:
   m_ObjectHideFlags: 0
@@ -2412,13 +2400,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   portal: {fileID: 2509484628532544460}
-  dialogue:
-    photo: {fileID: 21300012, guid: 7cd552900f8df054595fc18d446d930b, type: 3}
+  conversation:
+  - photo: {fileID: 21300012, guid: 7cd552900f8df054595fc18d446d930b, type: 3}
     name: 
-    audioClip: {fileID: 0}
-    sentences:
-    - "\xA1UN HOYO NEGRO!"
-    - "Me esta succionando, \xA1AYUDAAAAA!"
+    audioClip: {fileID: 8300000, guid: c19a5850ad7ada6458d6a573ed492111, type: 3}
+    sentence: "\xA1UN AGUJERO NEGRO!"
+    mental: 0
   goToAnotherSceneEvent: {fileID: 1065490635}
 --- !u!1 &1961869226
 GameObject:

@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class DrFirstTalkEvent : GameEvent
 {
-    public Dialogue drDialogue;
+    public Dialogue[] drConversation;
     public override void StartEvent()
     {
-        DialogueManger._instance.StartConversation(drDialogue);
+        DialogueManger._instance.StartConversation(drConversation);
     }
 }

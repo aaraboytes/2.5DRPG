@@ -5,7 +5,7 @@ using UnityEngine;
 public class ChairActivable : Activable
 {
     public Transform sitPosition;
-    public Dialogue dialogue;
+    public Dialogue[] conversation;
     public GameEvent goToNextRoom;
     PlayerControllerSuperTwoD player;
     private void Start()
@@ -24,6 +24,6 @@ public class ChairActivable : Activable
         fader.FadeIn();
         //Start dialogue with Dr.
         DialogueManger._instance.AddEvent(goToNextRoom);
-        DialogueManger._instance.StartConversation(dialogue);
+        DialogueManger._instance.StartConversation(conversation);
     }
 }

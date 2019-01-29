@@ -9,7 +9,9 @@ public class DialogueManger : MonoBehaviour {
     public Text name;
     public Text message;
     public Image photo;
-    
+    public Sprite normalDialogueBox;
+    public Sprite mentalDialogueBox;
+
     AudioSource audio = null;
     AudioClip clip;
 
@@ -39,7 +41,7 @@ public class DialogueManger : MonoBehaviour {
         }
     }
     #region Conversation methods
-    public void StartConversation(Dialogue dialogue)
+    public void StartConversation(Dialogue[] conversation)
     {
         //Initialize
         PlayerControllerSuperTwoD player = FindObjectOfType<PlayerControllerSuperTwoD>();
@@ -53,9 +55,9 @@ public class DialogueManger : MonoBehaviour {
         dialogueBox.SetActive(true);
         
         //Add sentences to FIFO collection
-        foreach (Dialogue d in dialogues)
+        foreach (Dialogue dialogue in conversation)
         {
-            dialogues.Enqueue(d);
+            dialogues.Enqueue(dialogue);
         }
         //Start with first dialogue
         NextSentence();
@@ -71,6 +73,19 @@ public class DialogueManger : MonoBehaviour {
         }
         
         Dialogue dialogue = dialogues.Dequeue();
+        //Modify the UI
+        if (dialogue.mental)
+        {
+            dialogueBox.GetComponent<Image>().sprite = mentalDialogueBox;
+            name.color = Color.white;
+            message.color = Color.white;
+        }
+        else
+        {
+            dialogueBox.GetComponent<Image>().sprite = normalDialogueBox;
+            name.color = Color.black;
+            message.color = Color.black;
+        }
         name.text = dialogue.name;
         photo.sprite = dialogue.photo;
         clip = dialogue.audioClip;

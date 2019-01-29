@@ -522,18 +522,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sitPosition: {fileID: 2066167925}
-  dialogue:
-    photo: {fileID: 21300002, guid: e1959731c7117a34a836fcd9ff0b8ceb, type: 3}
-    name: Dr. Williams
+  conversation:
+  - photo: {fileID: 21300002, guid: e1959731c7117a34a836fcd9ff0b8ceb, type: 3}
+    name: Dr.Williams
     audioClip: {fileID: 8300000, guid: 3c9d86034a4b28044abea670e06c2538, type: 3}
-    sentences:
-    - Los resultados ya salieron, me los dieron ayer por la tarde.
-    - "Estuve revisandolos ayer y bueno... Parece ser que el diagn\xF3stico anterior
-      estaba equivocado."
-    - "Esto debido a que los s\xEDntomas son identicos, sin embargo con las nuevas
-      pruebas y examenes que se le han hecho los resultados arrojaron otra cosa."
-    - "Lo mejor es que vaya por los papeles para poder hablar con m\xE1s tranquilidad,
-      le pido espere aqu\xED mientras voy con la secretaria por ellos."
+    sentence: Los resultados de las pruebas que fueron realizadas la semana pasada
+      llegaron ayer por la tarde.
+    mental: 0
+  - photo: {fileID: 21300002, guid: e1959731c7117a34a836fcd9ff0b8ceb, type: 3}
+    name: Dr.Williams
+    audioClip: {fileID: 8300000, guid: 3c9d86034a4b28044abea670e06c2538, type: 3}
+    sentence: "Despu\xE9s de analizarlos con detalle parece ser que el diagn\xF3stico
+      anterior estaba equivocado."
+    mental: 0
+  - photo: {fileID: 21300002, guid: e1959731c7117a34a836fcd9ff0b8ceb, type: 3}
+    name: Dr.Williams
+    audioClip: {fileID: 8300000, guid: 3c9d86034a4b28044abea670e06c2538, type: 3}
+    sentence: "Los s\xEDntomas que usted presentaba eran iguales, por lo que era facilmente
+      confundible."
+    mental: 0
+  - photo: {fileID: 21300002, guid: e1959731c7117a34a836fcd9ff0b8ceb, type: 3}
+    name: Dr.Williams
+    audioClip: {fileID: 8300000, guid: 3c9d86034a4b28044abea670e06c2538, type: 3}
+    sentence: "Lo que usted tiene... bueno, ser\xE1 mejor que vea los resultados usted
+      mismo, ya vengo, ir\xE9 por ellos con la secretaria."
+    mental: 0
   goToNextRoom: {fileID: 1102168383}
 --- !u!4 &259037554 stripped
 Transform:
@@ -635,12 +648,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07f9da55a2d4ba44e859225ba5cbc884, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogue:
-    photo: {fileID: 21300002, guid: e1959731c7117a34a836fcd9ff0b8ceb, type: 3}
+  conversation:
+  - photo: {fileID: 21300002, guid: e1959731c7117a34a836fcd9ff0b8ceb, type: 3}
     name: Dr.Williams
     audioClip: {fileID: 8300000, guid: 3c9d86034a4b28044abea670e06c2538, type: 3}
-    sentences:
-    - "Podr\xEDa tomar asiento por favor."
+    sentence: Tome asiento por favor.
+    mental: 0
 --- !u!114 &265343628
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1113,12 +1126,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07f9da55a2d4ba44e859225ba5cbc884, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogue:
-    photo: {fileID: 21300000, guid: 9a8c07917b6ad3144b444b7846172cf3, type: 3}
-    name: Esqueleto
+  conversation:
+  - photo: {fileID: 21300012, guid: 7cd552900f8df054595fc18d446d930b, type: 3}
+    name: 
     audioClip: {fileID: 0}
-    sentences:
-    - Es una replica de un esqueleto
+    sentence: Es una replica del esqueleto humano... me recuerda a algo...
+    mental: 1
 --- !u!136 &841450176
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1372,13 +1385,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28d20f638b3ca5944864f64722912f56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  drDialogue:
-    photo: {fileID: 21300002, guid: e1959731c7117a34a836fcd9ff0b8ceb, type: 3}
+  drConversation:
+  - photo: {fileID: 21300002, guid: e1959731c7117a34a836fcd9ff0b8ceb, type: 3}
     name: Dr.Williams
     audioClip: {fileID: 8300000, guid: 3c9d86034a4b28044abea670e06c2538, type: 3}
-    sentences:
-    - "\xA1Buenos d\xEDas se\xF1or! Me da gusto verlo el d\xEDa de hoy."
-    - Pase y tome asiento, le tengo noticias.
+    sentence: "\xA1Que gusto verlo! Sabe que siempre es bienvenido."
+    mental: 0
+  - photo: {fileID: 21300002, guid: e1959731c7117a34a836fcd9ff0b8ceb, type: 3}
+    name: Dr.Williams
+    audioClip: {fileID: 8300000, guid: 3c9d86034a4b28044abea670e06c2538, type: 3}
+    sentence: Hay noticias nuevas que hay que debatir, por favor tome asiento.
+    mental: 0
 --- !u!1 &1075959313
 GameObject:
   m_ObjectHideFlags: 0

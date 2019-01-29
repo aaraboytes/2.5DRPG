@@ -3,6 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public abstract class Interactuable : MonoBehaviour {
-    public Dialogue dialogue;
+    public Dialogue[] conversation;
     abstract public void InitConversation();
 }

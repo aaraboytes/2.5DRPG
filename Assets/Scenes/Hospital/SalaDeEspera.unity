@@ -158,11 +158,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07f9da55a2d4ba44e859225ba5cbc884, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogue:
-    photo: {fileID: 21300000, guid: 0553f5d8e6ee42644a2a75365417f141, type: 3}
-    name: Consultorio Dr.Williams
+  conversation:
+  - photo: {fileID: 21300000, guid: 0553f5d8e6ee42644a2a75365417f141, type: 3}
+    name: Puerta Dr.Williams
     audioClip: {fileID: 0}
-    sentences: []
+    sentence: Esta cerrado.
+    mental: 0
 --- !u!65 &4342208
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -198,7 +199,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextScene: Consultorio
   nextPlayerPos: {x: -0.5, y: 0.5, z: -4}
-  textOfClosedDoor: La puerta esta cerrada. El doctor puede seguir ocupado.
   isDoorOpened: 0
 --- !u!1 &5004870
 GameObject:
@@ -506,12 +506,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07f9da55a2d4ba44e859225ba5cbc884, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogue:
-    photo: {fileID: 21300000, guid: 0553f5d8e6ee42644a2a75365417f141, type: 3}
+  conversation:
+  - photo: {fileID: 21300000, guid: 0553f5d8e6ee42644a2a75365417f141, type: 3}
     name: Puerta secretaria
     audioClip: {fileID: 0}
-    sentences:
-    - Esta cerrado.
+    sentence: Esta cerrada.
+    mental: 0
 --- !u!65 &58384267
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -993,8 +993,8 @@ GameObject:
   m_Component:
   - component: {fileID: 404642833}
   - component: {fileID: 404642832}
-  - component: {fileID: 404642831}
   - component: {fileID: 404642834}
+  - component: {fileID: 404642831}
   - component: {fileID: 404642830}
   m_Layer: 0
   m_Name: Paciente
@@ -1012,18 +1012,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 404642829}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8eaccf2d26a1fa447ac3308affc74f28, type: 3}
+  m_Script: {fileID: 11500000, guid: 07f9da55a2d4ba44e859225ba5cbc884, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogue:
-    photo: {fileID: 21300004, guid: e1959731c7117a34a836fcd9ff0b8ceb, type: 3}
-    name: Paciente
-    audioClip: {fileID: 8300000, guid: 18f3eba5e5b726e41a1eb16ee85cd01d, type: 3}
-    sentences:
-    - '*coff* *coff* Lo siento si esta tos te molesta, cada vez se torna peor.'
-    - El doctor dice *coff* *coff*...
-    - '...rayos...esto no esta bien *coff* *coff* *coff*'
-  gameEvent: {fileID: 598648051}
+  conversation:
+  - photo: {fileID: 21300006, guid: 9a8c07917b6ad3144b444b7846172cf3, type: 3}
+    name: "Ni\xF1a con paleta en el pelo"
+    audioClip: {fileID: 8300000, guid: 7d80ebea36817be44a7f71530f846bd4, type: 3}
+    sentence: "Tuve un peque\xF1o accidente con mi paleta..."
+    mental: 0
 --- !u!136 &404642831
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1034,10 +1031,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 2.04
-  m_Height: 6.47
+  m_Radius: 0.931471
+  m_Height: 3.15
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0.28852895, y: 0, z: 0}
 --- !u!212 &404642832
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1075,7 +1072,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300004, guid: e1959731c7117a34a836fcd9ff0b8ceb, type: 3}
+  m_Sprite: {fileID: 21300006, guid: 9a8c07917b6ad3144b444b7846172cf3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1094,8 +1091,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 404642829}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.24, y: 0.49, z: 0.13}
-  m_LocalScale: {x: 0.16804375, y: 0.16804375, z: 0.16804375}
+  m_LocalPosition: {x: 1.602, y: 0.465, z: -0.43}
+  m_LocalScale: {x: 0.31909826, y: 0.31909826, z: 0.31909826}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 15
@@ -1736,20 +1733,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   drDoor: {fileID: 4342206}
-  dialogue:
-    photo: {fileID: 21300000, guid: e1959731c7117a34a836fcd9ff0b8ceb, type: 3}
+  conversation:
+  - photo: {fileID: 21300000, guid: e1959731c7117a34a836fcd9ff0b8ceb, type: 3}
     name: Secretaria
     audioClip: {fileID: 8300000, guid: 81c4118b5edecaf4f8af4a963b39f9d1, type: 3}
-    sentences:
-    - "\xA1Se\xF1or, el Dr.Williams esta listo para recibirlo!"
-    - Entre por la puerta por favor.
+    sentence: "Se\xF1or su cita esta lista."
+    mental: 0
   secretary: {fileID: 1810852929}
-  newSecretaryDialogue:
-    photo: {fileID: 21300000, guid: e1959731c7117a34a836fcd9ff0b8ceb, type: 3}
+  newSecretaryConversation:
+  - photo: {fileID: 21300000, guid: e1959731c7117a34a836fcd9ff0b8ceb, type: 3}
     name: Secretaria
     audioClip: {fileID: 8300000, guid: 81c4118b5edecaf4f8af4a963b39f9d1, type: 3}
-    sentences:
-    - Pase al consultorio por favor.
+    sentence: El doctor lo esta esperando, pase al consultorio.
+    mental: 0
   focusOnPlayer: {fileID: 1760320469}
 --- !u!1 &614021850 stripped
 GameObject:
@@ -2119,6 +2115,148 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 88fd66bf67fb52f439520519b84ff8c8, type: 3}
+--- !u!1 &1161989913
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1161989918}
+  - component: {fileID: 1161989917}
+  - component: {fileID: 1161989916}
+  - component: {fileID: 1161989915}
+  - component: {fileID: 1161989914}
+  m_Layer: 0
+  m_Name: Paciente (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1161989914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1161989913}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8eaccf2d26a1fa447ac3308affc74f28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  conversation:
+  - photo: {fileID: 21300004, guid: e1959731c7117a34a836fcd9ff0b8ceb, type: 3}
+    name: Paciente
+    audioClip: {fileID: 8300000, guid: 18f3eba5e5b726e41a1eb16ee85cd01d, type: 3}
+    sentence: "*Coff* *Coff* Yo tambi\xE9n vengo a consulta."
+    mental: 0
+  - photo: {fileID: 21300004, guid: e1959731c7117a34a836fcd9ff0b8ceb, type: 3}
+    name: Paciente
+    audioClip: {fileID: 8300000, guid: 18f3eba5e5b726e41a1eb16ee85cd01d, type: 3}
+    sentence: Esta tos *Coff* *Coff* el doctor dice que *Coff* *Coff*
+    mental: 0
+  - photo: {fileID: 21300004, guid: e1959731c7117a34a836fcd9ff0b8ceb, type: 3}
+    name: Paciente
+    audioClip: {fileID: 8300000, guid: 18f3eba5e5b726e41a1eb16ee85cd01d, type: 3}
+    sentence: '...demonios, esto no va bien..*Coff* *Coff*'
+    mental: 0
+  - photo: {fileID: 21300012, guid: 7cd552900f8df054595fc18d446d930b, type: 3}
+    name: 
+    audioClip: {fileID: 0}
+    sentence: Este sujeto se ve realmente mal
+    mental: 1
+  gameEvent: {fileID: 598648051}
+--- !u!114 &1161989915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1161989913}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d530e1561d349da409d4068bad636f6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!136 &1161989916
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1161989913}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 2.04
+  m_Height: 6.47
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!212 &1161989917
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1161989913}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300004, guid: e1959731c7117a34a836fcd9ff0b8ceb, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 4.08, y: 6.47}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!4 &1161989918
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1161989913}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4.29, y: 0.49, z: 2.39}
+  m_LocalScale: {x: 0.16804375, y: 0.16804375, z: 0.16804375}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 25
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1193066445
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3134,13 +3272,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07f9da55a2d4ba44e859225ba5cbc884, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogue:
-    photo: {fileID: 21300000, guid: e1959731c7117a34a836fcd9ff0b8ceb, type: 3}
+  conversation:
+  - photo: {fileID: 21300000, guid: e1959731c7117a34a836fcd9ff0b8ceb, type: 3}
     name: Recepcionista
     audioClip: {fileID: 8300000, guid: 81c4118b5edecaf4f8af4a963b39f9d1, type: 3}
-    sentences:
-    - El doctor se encuentra ocupado por el momento.
-    - Puede sentarse en alguna de las bancas de la sala de espera mientras esta listo.
+    sentence: El doctor lo atendera en un instance, espere por favor.
+    mental: 0
 --- !u!65 &1810852930
 BoxCollider:
   m_ObjectHideFlags: 0

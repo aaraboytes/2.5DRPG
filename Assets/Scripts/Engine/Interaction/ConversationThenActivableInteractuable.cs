@@ -8,6 +8,6 @@ public class ConversationThenActivableInteractuable : Interactuable
     public override void InitConversation()
     {
         DialogueManger._instance.AddEvent(gameEvent);
-        DialogueManger._instance.StartConversation(dialogue);
+        DialogueManger._instance.StartConversation(conversation);
     }
 }

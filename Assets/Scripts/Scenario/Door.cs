@@ -7,8 +7,7 @@ public class Door : MonoBehaviour
     [Header("Door properties")]
     public string nextScene;
     public Vector3 nextPlayerPos;
-    [TextArea()]
-    public string textOfClosedDoor;
+  
     public bool isDoorOpened = false;
     Interactuable interactuable;
 
@@ -17,6 +16,8 @@ public class Door : MonoBehaviour
         interactuable = GetComponent<Interactuable>();
         if (!isDoorOpened)
             CloseDoor();
+        else
+            OpenDoor();
     }
     public void PassDoor()
     {
@@ -29,11 +30,9 @@ public class Door : MonoBehaviour
     }
     public void OpenDoor() {
         isDoorOpened = true;
-        interactuable.dialogue.sentences = new string[0];
+        interactuable.conversation[0].sentence = "Esta abierto";
     }
     public void CloseDoor() {
         isDoorOpened = false;
-        interactuable.dialogue.sentences = new string[1];
-        interactuable.dialogue.sentences[0] = textOfClosedDoor;
     }
 }

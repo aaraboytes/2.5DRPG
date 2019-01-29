@@ -6,6 +6,6 @@ public class ConversationInteractuable : Interactuable
 {
     public override void InitConversation()
     {
-        DialogueManger._instance.StartConversation(dialogue);
+        DialogueManger._instance.StartConversation(conversation);
     }
 }

@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class SpawnDialogueEvent : GameEvent
 {
-    public Dialogue dialogue;
+    public Dialogue[] conversation;
     public override void StartEvent()
     {
-        DialogueManger._instance.StartConversation(dialogue);
+        DialogueManger._instance.StartConversation(conversation);
     }
 }
