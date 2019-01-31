@@ -155,9 +155,14 @@ public class PlayerControllerSuperTwoD : MonoBehaviour {
         #endregion
     }
     #region Gameplay methods
+    public int GetCurrentHealth()
+    {
+        return currentHealth;
+    }
     public void MakeDamage(Vector3 dir, float force)
     {
         currentHealth--;
+        HPManager._instance.DamageToPlayer();
         if(currentHealth == 0)
         {
             Die();
