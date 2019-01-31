@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: 
     guid: 00000000000000000000000000000000
   - enabled: 1
+    path: Assets/Scenes/GameOver.unity
+    guid: ef2e3ea4645e6e347bc5cab9f701f074
+  - enabled: 1
     path: Assets/Scenes/Hospital/Pasillo_1.unity
     guid: e2cfa72b4cc22874fbd90982c388b09f
   - enabled: 1
@@ -32,4 +35,37 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Forest/Forest_1.unity
     guid: 6aeef9492d65a68449e0e88a3babfbb9
+  - enabled: 1
+    path: Assets/Scenes/Forest/Forest_2.unity
+    guid: fc7006386c444624b9ed3ff67f4963ae
+  - enabled: 1
+    path: Assets/Scenes/Forest/Aldea.unity
+    guid: 559f208fc19556d41bfe0d5d7205c593
+  - enabled: 1
+    path: Assets/Scenes/Forest/Aldea_night.unity
+    guid: c74d0f2a946d2ac4e8bc4a9d5bb3e2f1
+  - enabled: 1
+    path: Assets/Scenes/Forest/Chozas/Choza_1.unity
+    guid: 96da82b80f121ad419da17622edee11e
+  - enabled: 1
+    path: Assets/Scenes/Forest/Chozas/Choza_2.unity
+    guid: 7468f3eedb45a4b4b8e92dc24cae3e6a
+  - enabled: 1
+    path: Assets/Scenes/Forest/Chozas/Choza_3.unity
+    guid: ca3bdf3b883efdc498f3bc6d69ad0f1d
+  - enabled: 1
+    path: Assets/Scenes/Forest/Chozas/Choza_4.unity
+    guid: c7a3a689b3643d7428f3ec525b2db4cb
+  - enabled: 1
+    path: Assets/Scenes/Forest/Chozas/Choza_5.unity
+    guid: b36a9d65fac7dfb41b9c2c24fdb9f662
+  - enabled: 1
+    path: Assets/Scenes/Forest/Chozas/Choza_5Cinematic.unity
+    guid: 18cf37ff6b4e06942b9490d703c090df
+  - enabled: 1
+    path: Assets/Scenes/Forest/Chozas/Choza_5Cinematic2.unity
+    guid: 2710ea32a764a1744bab4cb78d576e73
+  - enabled: 1
+    path: Assets/Scenes/Forest/Chozas/Choza_5Night.unity
+    guid: c734f96979135e44b8f89aaba338c998
   m_configObjects: {}

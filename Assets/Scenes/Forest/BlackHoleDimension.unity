@@ -10111,7 +10111,7 @@ PrefabInstance:
     - target: {fileID: 3998339776729643706, guid: 31808c0330fe34245a8f80a2ce1cca5d,
         type: 3}
       propertyPath: nextPlayerPos.y
-      value: 0
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3998339776729643706, guid: 31808c0330fe34245a8f80a2ce1cca5d,
         type: 3}

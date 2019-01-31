@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour {
     public static GameManager _instance;
@@ -36,10 +37,16 @@ public class GameManager : MonoBehaviour {
     {
         player = _player;
     }
+    public void LoadSavedScene()
+    {
+        PlayerData pd = SaveSystem.Load();
+        SceneManager.LoadScene(pd.sceneName);
+    }
     public void LoadSavedElements()
     {
         PlayerData pd = SaveSystem.Load();
         Vector3 savedPosition = new Vector3(pd.position[0], pd.position[1], pd.position[2]);
+        
         //player.transform.position = savedPosition;
         player.SetHealth(pd.health);
         player.SetItems(pd.items);
@@ -57,6 +64,10 @@ public class GameManager : MonoBehaviour {
             player = FindObjectOfType<PlayerControllerSuperTwoD>();
         if(player)
             player.gameObject.transform.position = playerPos;
+    }
+    public void GameOverScene()
+    {
+        FindObjectOfType<FadeManager>().FadeOut("GameOver");
     }
     #endregion
     #region Audio

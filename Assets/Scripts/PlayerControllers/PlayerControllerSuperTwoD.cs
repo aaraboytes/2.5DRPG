@@ -14,6 +14,10 @@ public class PlayerControllerSuperTwoD : MonoBehaviour {
     Animator anim;
     bool hitting = false;
 
+    [Header("Damage")]
+    float mass = 3.0f;
+    bool damaged = false;
+
     public bool paused;
     [SerializeField]
     List<int> items = new List<int>();
@@ -21,6 +25,7 @@ public class PlayerControllerSuperTwoD : MonoBehaviour {
 
     private void Start()
     {
+        currentHealth = health;
         body = GetComponent<CharacterController>();
         anim = GetComponent<Animator>();
         GameManager._instance.SetCurrentPlayer(this);
@@ -32,14 +37,24 @@ public class PlayerControllerSuperTwoD : MonoBehaviour {
         if (!paused)
         {
             #region Player movement
-            //Input
-            movement = (Vector3.forward * Input.GetAxisRaw("Vertical")) + (Vector3.right * Input.GetAxisRaw("Horizontal"));
-            //Reinsert gravity and add speed
-            movement = movement.normalized * speed * Time.deltaTime;
+            if (!damaged)
+            {
+                //Input
+                movement = (Vector3.forward * Input.GetAxisRaw("Vertical")) + (Vector3.right * Input.GetAxisRaw("Horizontal"));
+                //Reinsert gravity and add speed
+                movement = movement.normalized * speed * Time.deltaTime;
+            }
+            else
+            {
+                if (movement.magnitude < 0.2)
+                    damaged = false;
+                movement = Vector3.Lerp(movement, Vector3.zero, 5 * Time.deltaTime);
+            }
+            //Add gravity
             if (body.isGrounded)
                 movement.y = 0;
             else
-                movement.y = Physics.gravity.y;
+                movement.y = Physics.gravity.y * Time.deltaTime;
             //Move
             body.Move(movement);
             #endregion
@@ -139,6 +154,33 @@ public class PlayerControllerSuperTwoD : MonoBehaviour {
         anim.SetInteger("up", (int)Input.GetAxisRaw("Vertical"));
         #endregion
     }
+    #region Gameplay methods
+    public void MakeDamage(Vector3 dir, float force)
+    {
+        currentHealth--;
+        if(currentHealth == 0)
+        {
+            Die();
+        }
+        AddImpact(dir, force);
+    }
+    public void AddImpact(Vector3 dir,float force)
+    {
+        damaged = true;
+        dir.Normalize();
+        if (dir.y < 0) dir.y = -dir.y;
+        movement += dir.normalized * force / mass;
+    }
+    void Die()
+    {
+        paused = true;
+        anim.SetTrigger("Dies");
+    }
+    public void GoToGameOverScene()
+    {
+        GameManager._instance.GameOverScene();
+    }
+    #endregion
     #region Save data methods
     public int GetHealth()
     {

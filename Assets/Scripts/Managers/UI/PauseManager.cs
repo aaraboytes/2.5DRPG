@@ -45,9 +45,6 @@ public class PauseManager : MonoBehaviour {
                         Save();
                         break;
                     case 2:
-                        Options();
-                        break;
-                    case 3:
                         Quit();
                         break;
                 }
@@ -87,14 +84,8 @@ public class PauseManager : MonoBehaviour {
         SaveSystem.Save(player);
         Resume();
     }
-    void Options()
-    {
-        FindObjectOfType<Inventory>().ClearInventory();
-        GameManager._instance.LoadSavedElements();
-        Resume();
-    }
     void Quit()
     {
-        Application.Quit();
+        FindObjectOfType<FadeManager>().FadeOut("MainMenu");
     }
 }
