@@ -14,6 +14,7 @@ public class PlayerData {
         position[0] = player.gameObject.transform.position.x;
         position[1] = player.gameObject.transform.position.y;
         position[2] = player.gameObject.transform.position.z;
+
         items = player.GetItems();
         health = player.GetHealth();
         sceneName = SceneManager.GetActiveScene().name;

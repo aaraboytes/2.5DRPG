@@ -67,7 +67,6 @@ public class DialogueManger : MonoBehaviour {
     {
         if (dialogues.Count == 0)
         {
-            Debug.Log("Conversation has ended");
             EndConversation();
             return;
         }

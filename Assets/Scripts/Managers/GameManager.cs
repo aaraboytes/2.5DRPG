@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour {
     {
         if (_instance == null)
             _instance = this;
-        else
+        else if(_instance!=this)
             Destroy(gameObject);
         DontDestroyOnLoad(gameObject);
     }
@@ -40,14 +40,25 @@ public class GameManager : MonoBehaviour {
     public void LoadSavedScene()
     {
         PlayerData pd = SaveSystem.Load();
+        SetCurrentPlayerData(pd);
+        Vector3 savedPosition = new Vector3(pd.position[0], pd.position[1], pd.position[2]);
+        SetNextPlayerPosition(savedPosition);
         SceneManager.LoadScene(pd.sceneName);
     }
     public void LoadSavedElements()
     {
-        PlayerData pd = SaveSystem.Load();
-        Vector3 savedPosition = new Vector3(pd.position[0], pd.position[1], pd.position[2]);
-        
-        //player.transform.position = savedPosition;
+        PlayerData pd;
+        if (currentPlayerData == null)
+        {
+            pd = SaveSystem.Load();
+            SetCurrentPlayerData(pd);
+        }
+        else
+            pd = currentPlayerData;
+        if(player == null && FindObjectOfType<PlayerControllerSuperTwoD>())
+        {
+            player = FindObjectOfType<PlayerControllerSuperTwoD>();
+        }
         player.SetHealth(pd.health);
         player.SetItems(pd.items);
         FindObjectOfType<Inventory>().InitializeInventory();

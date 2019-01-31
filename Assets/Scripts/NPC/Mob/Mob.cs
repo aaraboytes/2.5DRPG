@@ -18,7 +18,7 @@ public class Mob : MonoBehaviour
     Transform player;
     [SerializeField]
     Transform currentPatrolPoint;
-    int currentIndex = 0;
+    int currentIndex = 1;
     bool isAttacking = false;
     float attackTimer;
 
@@ -28,7 +28,16 @@ public class Mob : MonoBehaviour
     {
         body = GetComponent<Rigidbody>();
         player = FindObjectOfType<PlayerControllerSuperTwoD>().transform;
-        currentPatrolPoint = patrolPoints[currentIndex];
+        if(currentPatrolPoint == null)
+            currentPatrolPoint = patrolPoints[currentIndex];
+        else
+        {
+            for(int i = 0; i < patrolPoints.Length; i++)
+            {
+                if(patrolPoints[i] == currentPatrolPoint)
+                    currentIndex = i;
+            }
+        }
     }
 
     void Update()
