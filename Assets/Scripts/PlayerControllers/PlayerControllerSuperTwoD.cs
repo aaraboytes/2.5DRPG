@@ -30,6 +30,7 @@ public class PlayerControllerSuperTwoD : MonoBehaviour {
         anim = GetComponent<Animator>();
         GameManager._instance.SetCurrentPlayer(this);
         GameManager._instance.LoadSavedElements();
+        HPManager._instance.SetCurrentHealth(currentHealth);
         inventory = FindObjectOfType<Inventory>();
     }
     void Update() {

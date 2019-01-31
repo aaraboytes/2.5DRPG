@@ -21,19 +21,19 @@ public class HPManager : MonoBehaviour
             hpImages[i] = hpHolder.transform.GetChild(i).gameObject;
         }
         player = FindObjectOfType<PlayerControllerSuperTwoD>();
-        life = player.GetCurrentHealth();
         for(int i = 5; i < life - 1; i++)
         {
             hpImages[i].SetActive(false);
         }
     }
+    public void SetCurrentHealth(int currentHP)
+    {
+        life = currentHP;
+    }
     public void DamageToPlayer()
     {
+        hpImages[life - 1].SetActive(false);
         life--;
-        for (int i = 4; i < life-1; i++)
-        {
-            hpImages[i].SetActive(false);
-        }
     }
     public void TurnOn()
     {
