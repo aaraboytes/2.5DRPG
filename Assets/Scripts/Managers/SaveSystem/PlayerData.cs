@@ -8,6 +8,7 @@ public class PlayerData {
     public int health;
     public int[] items = new int[20];
     public string sceneName;
+    public int pages;
 
     public PlayerData(PlayerControllerSuperTwoD player)
     {
@@ -18,6 +19,7 @@ public class PlayerData {
         items = player.GetItems();
         health = player.GetHealth();
         sceneName = SceneManager.GetActiveScene().name;
+        pages = player.GetPages();
     }
     public PlayerData()
     {
@@ -27,5 +29,6 @@ public class PlayerData {
         items = new int[20];
         health = 4;
         sceneName = "";
+        pages = 0;
     }
 }

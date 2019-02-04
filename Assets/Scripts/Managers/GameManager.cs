@@ -6,9 +6,13 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour {
     public static GameManager _instance;
     //Player
+    public bool loadData = false;
     PlayerData currentPlayerData;
     PlayerControllerSuperTwoD player;
-    Vector3 playerPos;
+    public Vector3 playerPos;
+    List<int> currentItems = new List<int>();
+    int currentHealth = 5;
+    int currentPages = 0;
     //Audio
     AudioSource audio;
 
@@ -22,6 +26,8 @@ public class GameManager : MonoBehaviour {
     }
     private void Start()
     {
+        for (int i = 0; i < 20; i++)
+            currentItems.Add(0);
         if (player == null)
             player = FindObjectOfType<PlayerControllerSuperTwoD>();
         if (player)
@@ -61,7 +67,9 @@ public class GameManager : MonoBehaviour {
         }
         player.SetHealth(pd.health);
         player.SetItems(pd.items);
+        player.SetPages(pd.pages);
         FindObjectOfType<Inventory>().InitializeInventory();
+        loadData = false;
     }
     #endregion
     #region Transition between scenes
@@ -75,6 +83,30 @@ public class GameManager : MonoBehaviour {
             player = FindObjectOfType<PlayerControllerSuperTwoD>();
         if(player)
             player.gameObject.transform.position = playerPos;
+    }
+    public void SetPlayerHealth(int health)
+    {
+        currentHealth = health;
+    }
+    public int GetPlayerHealth()
+    {
+        return currentHealth;
+    }
+    public void SetCurrentItems(List<int> items)
+    {
+        currentItems = items;
+    }
+    public List<int> GetCurrentItems()
+    {
+        return currentItems;
+    }
+    public void SetCurrentPages(int _pages)
+    {
+        currentPages = _pages;
+    }
+    public int GetCurrentPages()
+    {
+        return currentPages;
     }
     public void GameOverScene()
     {

@@ -10,6 +10,7 @@ public class PlayerControllerSuperTwoD : MonoBehaviour {
     public GameObject z;
 
     int currentHealth = 0;
+    int pages = 0;
     CharacterController body;
     Vector3 movement;
     Vector3 direction;
@@ -34,10 +35,22 @@ public class PlayerControllerSuperTwoD : MonoBehaviour {
         currentHealth = health;
         body = GetComponent<CharacterController>();
         anim = GetComponent<Animator>();
-        GameManager._instance.SetCurrentPlayer(this);
-        GameManager._instance.LoadSavedElements();
-        HPManager._instance.SetCurrentHealth(currentHealth);
         inventory = FindObjectOfType<Inventory>();
+        GameManager._instance.SetCurrentPlayer(this);
+        if (GameManager._instance.loadData)
+        {
+            GameManager._instance.LoadSavedElements();
+        }
+        else
+        {
+            items = GameManager._instance.GetCurrentItems();
+            inventory.InitializeInventory();
+            currentHealth = GameManager._instance.GetPlayerHealth();
+            pages = GameManager._instance.GetCurrentPages();
+            GameManager._instance.SetPlayerPosition();
+        }
+        HPManager._instance.SetCurrentHealth(currentHealth);
+        
     }
     void Update() {
         transform.LookAt(Camera.main.transform);
@@ -231,8 +244,20 @@ public class PlayerControllerSuperTwoD : MonoBehaviour {
     {
         GameManager._instance.GameOverScene();
     }
+    public void IncrementPage()
+    {
+        pages++;
+    }
     #endregion
     #region Inventory methods
+    public void SetPages(int _pages)
+    {
+        pages = _pages;
+    }
+    public int GetPages()
+    {
+        return pages;
+    }
     public int GetNumberOfItems()
     {
         int count = 0;
@@ -241,6 +266,10 @@ public class PlayerControllerSuperTwoD : MonoBehaviour {
             if (items[i] != 0) count++;
         }
         return count;
+    }
+    public List<int> GetItemsList()
+    {
+        return items;
     }
     public int[] GetItems()
     {

@@ -47,9 +47,4 @@ public class FadeManager : MonoBehaviour
             nextSceneName = "";
         }
     }
-
-    public void SetPlayerInTheNewScene()
-    {
-        GameManager._instance.SetPlayerPosition();
-    }
 }

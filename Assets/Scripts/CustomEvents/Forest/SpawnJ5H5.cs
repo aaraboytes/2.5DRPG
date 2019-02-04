@@ -9,10 +9,10 @@ public class SpawnJ5H5 : GameEvent
     void Start()
     {
         player = FindObjectOfType<PlayerControllerSuperTwoD>().transform;
-        Invoke("StartEvent", 0.2f); 
+        Invoke("StartEvent", 0.1f); 
     }
     public override void StartEvent()
     {
-        F5H5.transform.position = player.position + Vector3.right *0.5f;
+        F5H5.transform.position = player.position + Vector3.up*2.0f;
     }
 }
