@@ -24,6 +24,9 @@ public class PlayerControllerSuperTwoD : MonoBehaviour {
     public bool paused;
     [SerializeField]
     List<int> items = new List<int>();
+    public Item launcheableItem;
+    public GameObject bottle;
+    Vector3 launchDirection;
     Inventory inventory;
 
     private void Start()
@@ -45,6 +48,10 @@ public class PlayerControllerSuperTwoD : MonoBehaviour {
             {
                 //Input
                 movement = (Vector3.forward * Input.GetAxisRaw("Vertical")) + (Vector3.right * Input.GetAxisRaw("Horizontal"));
+                if (movement != Vector3.zero)
+                {
+                    launchDirection = movement;
+                }
                 movement = movement.normalized * speed * Time.deltaTime;
                 if (movement != Vector3.zero)
                 {
@@ -129,8 +136,6 @@ public class PlayerControllerSuperTwoD : MonoBehaviour {
                         if (inventory.AddItem())
                         {
                             AddItem(tookeableItem.item.id);
-                            inventory.ClearInventory();
-                            inventory.InitializeInventory();
                             tookeableItem.SetSuccessDialogue();
                         }
                         else
@@ -152,6 +157,17 @@ public class PlayerControllerSuperTwoD : MonoBehaviour {
                     Activable activable = target.GetComponent<Activable>();
                     activable.Activate();
                 }
+            }else if(Input.GetKeyDown(KeyCode.Z) && !hitting)
+            {
+                //Check if there are bottles in inventory
+                if (FindItem(launcheableItem.id))
+                {
+                    //Launch it
+                    GameObject currentBottle = Instantiate(bottle);
+                    currentBottle.transform.position = transform.position + launchDirection * 0.3f;
+                    currentBottle.GetComponent<Rigidbody>().AddForce(launchDirection * 5.0f + Vector3.up * 3.0f,ForceMode.Impulse);
+                    DropItem(launcheableItem.id);
+                }
             }
             #endregion
         }
@@ -166,9 +182,24 @@ public class PlayerControllerSuperTwoD : MonoBehaviour {
         #endregion
     }
     #region Gameplay methods
+    #region Health
+    public int GetHealth()
+    {
+        return currentHealth;
+    }
+    public void SetHealth(int _currentHealth)
+    {
+        currentHealth = _currentHealth;
+    }
     public int GetCurrentHealth()
     {
         return currentHealth;
+    }
+    public void MakeHeal()
+    {
+        currentHealth++;
+        HPManager._instance.TurnOn();
+        HPManager._instance.HealPlayer();
     }
     public void MakeDamage(Vector3 dir, float force)
     {
@@ -193,20 +224,15 @@ public class PlayerControllerSuperTwoD : MonoBehaviour {
         paused = true;
         anim.SetTrigger("Dies");
     }
+    #endregion
+    #region Attack
+    #endregion
     public void GoToGameOverScene()
     {
         GameManager._instance.GameOverScene();
     }
     #endregion
-    #region Save data methods
-    public int GetHealth()
-    {
-        return currentHealth;
-    }
-    public void SetHealth(int _currentHealth)
-    {
-        currentHealth = _currentHealth;
-    }
+    #region Inventory methods
     public int GetNumberOfItems()
     {
         int count = 0;
@@ -233,6 +259,15 @@ public class PlayerControllerSuperTwoD : MonoBehaviour {
             items.Add(_items[i]);
         }
     }
+    public bool FindItem(int id)
+    {
+        for(int i = 0; i < items.Count; i++)
+        {
+            if (items[i] == id)
+                return true;
+        }
+        return false;
+    }
     public void DropItem(int id)
     {
         int index = 0;
@@ -244,10 +279,14 @@ public class PlayerControllerSuperTwoD : MonoBehaviour {
             }
         }
         items[index] = 0;
+        inventory.ClearInventory();
+        inventory.InitializeInventory();
     }
     public void AddItem(int id)
     {
         items[GetNumberOfItems()] = id;
+        inventory.ClearInventory();
+        inventory.InitializeInventory();
     }
     #endregion
 }

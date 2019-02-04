@@ -16,6 +16,9 @@ public class Inventory : MonoBehaviour
     public Image infoImage;
     public Text infoText;
 
+    public GameObject usableBtn;
+    public GameObject droppeableBtn;
+
     public GameObject slotsHolder;
     GameObject[] slots = new GameObject[20];
     PlayerControllerSuperTwoD player;
@@ -59,11 +62,15 @@ public class Inventory : MonoBehaviour
         {
             infoImage.sprite = invItem.slottedItem.itemImg;
             infoText.text = invItem.slottedItem.description;
+            usableBtn.SetActive(invItem.slottedItem.usable);
+            droppeableBtn.SetActive(invItem.slottedItem.droppeable);
         }
         else
         {
             infoImage.sprite = defaultBGImage;
             infoText.text = "";
+            usableBtn.SetActive(false);
+            droppeableBtn.SetActive(false);
         }
     }
     public void UseItem()

@@ -14,4 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 1
   itemImg: {fileID: 21300004, guid: c4042ecff0e226a44a92564df680cb03, type: 3}
-  description: Una manzana que puede sanar un punto de vida
+  description: Una rica manzana amarilla
+  usable: 1
+  droppeable: 1

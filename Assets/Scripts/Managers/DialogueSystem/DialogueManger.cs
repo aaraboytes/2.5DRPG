@@ -12,7 +12,7 @@ public class DialogueManger : MonoBehaviour {
     public Sprite normalDialogueBox;
     public Sprite mentalDialogueBox;
 
-    AudioSource audio = null;
+    AudioSource audio;
     AudioClip clip;
 
     NPC currentNPC = null;

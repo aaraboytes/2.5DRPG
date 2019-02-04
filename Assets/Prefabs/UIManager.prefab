@@ -1938,6 +1938,8 @@ MonoBehaviour:
   defaultBGImage: {fileID: 21300000, guid: e574a9bf79e1c60439d7a4322a434af6, type: 3}
   infoImage: {fileID: 2416546820973354669}
   infoText: {fileID: 2416546821371836200}
+  usableBtn: {fileID: 2416546821498911544}
+  droppeableBtn: {fileID: 2416546821789460177}
   slotsHolder: {fileID: 2416546821805309716}
 --- !u!82 &1209363523435300886
 AudioSource:
@@ -4140,7 +4142,7 @@ MonoBehaviour:
     m_Bottom: 0
   m_ChildAlignment: 0
   m_StartCorner: 0
-  m_StartAxis: 1
+  m_StartAxis: 0
   m_CellSize: {x: 90, y: 90}
   m_Spacing: {x: 15.53, y: 10}
   m_Constraint: 0

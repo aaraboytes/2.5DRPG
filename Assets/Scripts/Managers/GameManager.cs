@@ -84,7 +84,8 @@ public class GameManager : MonoBehaviour {
     #region Audio
     public void SetBGMusic(AudioClip music)
     {
-        audio.clip = music;
+        if(audio.clip!=music)
+            audio.clip = music;
     }
     public void PlayBGMusic() { audio.loop = true; audio.Play(); }
     public void StopBGMusic() { audio.Stop(); }

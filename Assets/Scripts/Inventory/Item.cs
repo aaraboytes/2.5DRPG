@@ -8,4 +8,6 @@ public class Item : ScriptableObject
     public int id;
     public Sprite itemImg;
     public string description;
+    public bool usable = true;
+    public bool droppeable = true;
 }

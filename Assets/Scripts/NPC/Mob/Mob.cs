@@ -137,6 +137,19 @@ public class Mob : MonoBehaviour
         currentPatrolPoint = patrolPoints[minDistIndex];
     }
 
+    public void MakeDamage()
+    {
+        life--;
+        if (life <= 0)
+        {
+            Die();
+        }
+    }
+    public void Die()
+    {
+        anim.SetTrigger("Die");
+        this.enabled = false;
+    }
     Vector3 CalculateAttackDirection()
     {
         Vector3 attackDirection;

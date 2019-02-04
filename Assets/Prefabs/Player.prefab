@@ -202,6 +202,8 @@ MonoBehaviour:
   z: {fileID: 1984862592}
   paused: 0
   items: 
+  launcheableItem: {fileID: 11400000, guid: 066a63484daa1cd46b4bea8aeda4ecb1, type: 2}
+  bottle: {fileID: 3880456703941275589, guid: 26a62eb2c45f2e84aac240fc1ac43b4c, type: 3}
 --- !u!136 &8247352975570609940
 CapsuleCollider:
   m_ObjectHideFlags: 0

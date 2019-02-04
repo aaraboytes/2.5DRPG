@@ -19,8 +19,7 @@ public class ActivateItemEffect : MonoBehaviour
             case 1:
                 int currentHealth = player.GetHealth();
                 if (currentHealth != player.health)
-                    currentHealth++;
-                player.SetHealth(currentHealth);
+                    player.MakeHeal();
                 return true;
                 break;
             //Poison

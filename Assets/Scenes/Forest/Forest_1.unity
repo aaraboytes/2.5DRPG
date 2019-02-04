@@ -739,6 +739,7 @@ MonoBehaviour:
     audioClip: {fileID: 0}
     sentence: '...las cosas son borrosas, bueno, no importa, debo buscar ayuda.'
     mental: 1
+  startWhenSceneStarts: 0
 --- !u!33 &105903046
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -863,6 +864,92 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 2.8230846, z: 1}
   m_Center: {x: 0, y: 0.9115427, z: 0}
+--- !u!1 &127671922
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 127671923}
+  - component: {fileID: 127671926}
+  - component: {fileID: 127671925}
+  - component: {fileID: 127671924}
+  m_Layer: 0
+  m_Name: Portapapeles
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &127671923
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 127671922}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -15.73, y: 20.23, z: -4.13}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1240765396}
+  m_Father: {fileID: 1007730119}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &127671924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 127671922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f88b411b96b258646a81b91b02fbb309, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  conversation:
+  - photo: {fileID: 21300012, guid: 7cd552900f8df054595fc18d446d930b, type: 3}
+    name: 
+    audioClip: {fileID: 8300000, guid: c19a5850ad7ada6458d6a573ed492111, type: 3}
+    sentence: "Es el portapapeles del doctor... ten\xEDa algo importante... no lo
+      recuerdo, ser\xE1 mejor que lo lleve."
+    mental: 0
+  - photo: {fileID: 21300000, guid: 0f862dfd3349a824894999b8d37179fc, type: 3}
+    name: 
+    audioClip: {fileID: 0}
+    sentence: "Obtuviste un portapapeles vac\xEDo."
+    mental: 0
+  obj: {fileID: 127671922}
+  item: {fileID: 11400000, guid: ac5149c8e0fb5f74893df84ac920eabd, type: 2}
+--- !u!114 &127671925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 127671922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91041b18cddf8124e99ceb6aac880608, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerEvent: {fileID: 127671924}
+--- !u!65 &127671926
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 127671922}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.670619, y: 1, z: 13.515664}
+  m_Center: {x: 0.1646905, y: 0, z: -1.2160649}
 --- !u!1001 &132360574
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6787,8 +6874,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 2.277178, z: 1}
-  m_Center: {x: 0, y: 1.1240503, z: 0}
+  m_Size: {x: 1.1072559, y: 2.2363195, z: 1.0622997}
+  m_Center: {x: -2.4180212, y: 1.1444727, z: -1.2080812}
 --- !u!4 &702682313
 Transform:
   m_ObjectHideFlags: 0
@@ -6808,7 +6895,7 @@ Transform:
   - {fileID: 1986817431}
   - {fileID: 425064179}
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &723952330
 GameObject:
@@ -8463,7 +8550,7 @@ PrefabInstance:
     - target: {fileID: 8247352975570609937, guid: 9b8ea7f0a71365a4cb304d96357bb2b5,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8247352975570609937, guid: 9b8ea7f0a71365a4cb304d96357bb2b5,
         type: 3}
@@ -8810,6 +8897,75 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 791fe6f449099b047a65b2adb7b8e5a2, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5c5a5a4c998ce004cbf055fb76ac2acc, type: 3}
+--- !u!1001 &789217413
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 127671923}
+    m_Modifications:
+    - target: {fileID: 100006, guid: bde9a688b8529b64ea57279038ed15af, type: 3}
+      propertyPath: m_Name
+      value: Portapapeles
+      objectReference: {fileID: 0}
+    - target: {fileID: 400006, guid: bde9a688b8529b64ea57279038ed15af, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.036626816
+      objectReference: {fileID: 0}
+    - target: {fileID: 400006, guid: bde9a688b8529b64ea57279038ed15af, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.04061699
+      objectReference: {fileID: 0}
+    - target: {fileID: 400006, guid: bde9a688b8529b64ea57279038ed15af, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.06080675
+      objectReference: {fileID: 0}
+    - target: {fileID: 400006, guid: bde9a688b8529b64ea57279038ed15af, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400006, guid: bde9a688b8529b64ea57279038ed15af, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.9200743
+      objectReference: {fileID: 0}
+    - target: {fileID: 400006, guid: bde9a688b8529b64ea57279038ed15af, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400006, guid: bde9a688b8529b64ea57279038ed15af, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.3917441
+      objectReference: {fileID: 0}
+    - target: {fileID: 400006, guid: bde9a688b8529b64ea57279038ed15af, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400006, guid: bde9a688b8529b64ea57279038ed15af, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400006, guid: bde9a688b8529b64ea57279038ed15af, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -133.87401
+      objectReference: {fileID: 0}
+    - target: {fileID: 400006, guid: bde9a688b8529b64ea57279038ed15af, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400006, guid: bde9a688b8529b64ea57279038ed15af, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.074628025
+      objectReference: {fileID: 0}
+    - target: {fileID: 400006, guid: bde9a688b8529b64ea57279038ed15af, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.07462777
+      objectReference: {fileID: 0}
+    - target: {fileID: 400006, guid: bde9a688b8529b64ea57279038ed15af, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.074628025
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: bde9a688b8529b64ea57279038ed15af, type: 3}
 --- !u!1001 &801988216
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10188,6 +10344,7 @@ MonoBehaviour:
     audioClip: {fileID: 8300000, guid: c19a5850ad7ada6458d6a573ed492111, type: 3}
     sentence: "\xA1\xBFMe abandonaron en medio del bosque!? \xBFEn serio?"
     mental: 0
+  startWhenSceneStarts: 0
 --- !u!33 &901613420
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -11212,6 +11369,7 @@ Transform:
   - {fileID: 1262642071}
   - {fileID: 1079894935}
   - {fileID: 105903042}
+  - {fileID: 127671923}
   m_Father: {fileID: 0}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -11593,6 +11751,7 @@ MonoBehaviour:
     audioClip: {fileID: 0}
     sentence: Parece que no...
     mental: 1
+  startWhenSceneStarts: 0
 --- !u!33 &1079894939
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -11951,80 +12110,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 433792579}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &1198527655
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 2416546820615787813, guid: 88fd66bf67fb52f439520519b84ff8c8,
-        type: 3}
-      propertyPath: m_Name
-      value: UIManager (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 2416546820615787815, guid: 88fd66bf67fb52f439520519b84ff8c8,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 302.16
-      objectReference: {fileID: 0}
-    - target: {fileID: 2416546820615787815, guid: 88fd66bf67fb52f439520519b84ff8c8,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 212.93576
-      objectReference: {fileID: 0}
-    - target: {fileID: 2416546820615787815, guid: 88fd66bf67fb52f439520519b84ff8c8,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 8.54
-      objectReference: {fileID: 0}
-    - target: {fileID: 2416546820615787815, guid: 88fd66bf67fb52f439520519b84ff8c8,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2416546820615787815, guid: 88fd66bf67fb52f439520519b84ff8c8,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2416546820615787815, guid: 88fd66bf67fb52f439520519b84ff8c8,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2416546820615787815, guid: 88fd66bf67fb52f439520519b84ff8c8,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2416546820615787815, guid: 88fd66bf67fb52f439520519b84ff8c8,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 17
-      objectReference: {fileID: 0}
-    - target: {fileID: 2416546820615787815, guid: 88fd66bf67fb52f439520519b84ff8c8,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2416546820615787815, guid: 88fd66bf67fb52f439520519b84ff8c8,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2416546820615787815, guid: 88fd66bf67fb52f439520519b84ff8c8,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2416546820985876609, guid: 88fd66bf67fb52f439520519b84ff8c8,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 88fd66bf67fb52f439520519b84ff8c8, type: 3}
 --- !u!1 &1202603258
 GameObject:
   m_ObjectHideFlags: 0
@@ -12846,6 +12931,12 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 791fe6f449099b047a65b2adb7b8e5a2, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5c5a5a4c998ce004cbf055fb76ac2acc, type: 3}
+--- !u!4 &1240765396 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 400006, guid: bde9a688b8529b64ea57279038ed15af,
+    type: 3}
+  m_PrefabInstance: {fileID: 789217413}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1241133307
 GameObject:
   m_ObjectHideFlags: 0
@@ -13585,6 +13676,7 @@ MonoBehaviour:
     sentence: "El ambiente es muy tranquilo, creo que algo de aire fresco no estaba
       mal despu\xE9s de todo."
     mental: 1
+  startWhenSceneStarts: 0
 --- !u!33 &1262642075
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -15028,6 +15120,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2094131666}
   m_PrefabAsset: {fileID: 0}
+--- !u!224 &1464298678 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 2416546821805309719, guid: 88fd66bf67fb52f439520519b84ff8c8,
+    type: 3}
+  m_PrefabInstance: {fileID: 1710814353}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1464402759
 GameObject:
   m_ObjectHideFlags: 0
@@ -15996,6 +16094,7 @@ GameObject:
   - component: {fileID: 1570166154}
   - component: {fileID: 1570166153}
   - component: {fileID: 1570166152}
+  - component: {fileID: 1570166155}
   m_Layer: 0
   m_Name: Bush with F24
   m_TagString: Untagged
@@ -16085,6 +16184,88 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1570166155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1570166151}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2abea4c7ea9b234b885d59c28fef323, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  conversation:
+  - photo: {fileID: 21300012, guid: 7cd552900f8df054595fc18d446d930b, type: 3}
+    name: 
+    audioClip: {fileID: 8300000, guid: c19a5850ad7ada6458d6a573ed492111, type: 3}
+    sentence: "\xBFQu\xE9?\xA1\xBFQu\xE9 es eso?!"
+    mental: 0
+  - photo: {fileID: 21300000, guid: 372a7882094fb7e4181b3537d5ab29ad, type: 3}
+    name: ???
+    audioClip: {fileID: 0}
+    sentence: Por favor no grites, mis oidos son sensibles
+    mental: 1
+  - photo: {fileID: 21300012, guid: 7cd552900f8df054595fc18d446d930b, type: 3}
+    name: 
+    audioClip: {fileID: 0}
+    sentence: "Espera...\xBFT\xFA has dicho eso?"
+    mental: 1
+  - photo: {fileID: 21300000, guid: 372a7882094fb7e4181b3537d5ab29ad, type: 3}
+    name: ???
+    audioClip: {fileID: 0}
+    sentence: "S\xED, he sido yo, no te asustes, se que no eres de por aqu\xED."
+    mental: 1
+  - photo: {fileID: 21300012, guid: 7cd552900f8df054595fc18d446d930b, type: 3}
+    name: 
+    audioClip: {fileID: 0}
+    sentence: P...Pero como pudiste decir eso dentro de mi cabeza
+    mental: 1
+  - photo: {fileID: 21300000, guid: 372a7882094fb7e4181b3537d5ab29ad, type: 3}
+    name: ???
+    audioClip: {fileID: 0}
+    sentence: "En este tiempo no existe la voz,me alegra al fin haber escuchado una.
+      Nos comunicampos por telepat\xEDa."
+    mental: 1
+  - photo: {fileID: 21300012, guid: 7cd552900f8df054595fc18d446d930b, type: 3}
+    name: 
+    audioClip: {fileID: 0}
+    sentence: "\xBFEn este tiempo?"
+    mental: 1
+  - photo: {fileID: 21300000, guid: 372a7882094fb7e4181b3537d5ab29ad, type: 3}
+    name: ???
+    audioClip: {fileID: 0}
+    sentence: "S\xED, tiempos diferentes, tu raza se extingui\xF3 hace aproximadamente
+      un mill\xF3n de a\xF1os."
+    mental: 1
+  - photo: {fileID: 21300000, guid: 372a7882094fb7e4181b3537d5ab29ad, type: 3}
+    name: ???
+    audioClip: {fileID: 0}
+    sentence: "Sus constantes guerras los destruyeron, en este ciclo gal\xE1ctico
+      ya no habr\xE1 m\xE1s."
+    mental: 1
+  - photo: {fileID: 21300000, guid: 372a7882094fb7e4181b3537d5ab29ad, type: 3}
+    name: ???
+    audioClip: {fileID: 0}
+    sentence: Ahora el planeta es llamado E5M por su edad, ya no es llamado Tierra.
+    mental: 1
+  - photo: {fileID: 21300012, guid: 7cd552900f8df054595fc18d446d930b, type: 3}
+    name: 
+    audioClip: {fileID: 0}
+    sentence: "\xBFY eso cu\xE1nto tiempo es?"
+    mental: 1
+  - photo: {fileID: 21300000, guid: 372a7882094fb7e4181b3537d5ab29ad, type: 3}
+    name: ???
+    audioClip: {fileID: 0}
+    sentence: "5 millones de a\xF1os desde la transformaci\xF3n."
+    mental: 1
+  - photo: {fileID: 21300000, guid: 372a7882094fb7e4181b3537d5ab29ad, type: 3}
+    name: ???
+    audioClip: {fileID: 0}
+    sentence: "S\xE9 que algo no est\xE1 bien, tu llegada no es cualquier cosa. Vayamos
+      a la villa para ver que dice el viejo sabio."
+    mental: 1
 --- !u!1001 &1577913133
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16225,7 +16406,7 @@ Transform:
   m_Children:
   - {fileID: 2292568246465656737}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1620877642
 PrefabInstance:
@@ -17303,11 +17484,27 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2416546820615787809, guid: 88fd66bf67fb52f439520519b84ff8c8,
+        type: 3}
+      propertyPath: allItems.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2416546820615787809, guid: 88fd66bf67fb52f439520519b84ff8c8,
+        type: 3}
+      propertyPath: allItems.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: ac5149c8e0fb5f74893df84ac920eabd,
+        type: 2}
     - target: {fileID: 2416546820985876609, guid: 88fd66bf67fb52f439520519b84ff8c8,
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4901071434987659048, guid: 88fd66bf67fb52f439520519b84ff8c8,
+        type: 3}
+      propertyPath: m_Viewport
+      value: 
+      objectReference: {fileID: 1464298678}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 88fd66bf67fb52f439520519b84ff8c8, type: 3}
 --- !u!1 &1719863126
@@ -19720,6 +19917,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 8452085648619728206, guid: 1a2bc6ba734014d4da926591f80f5ed3,
+        type: 3}
+      propertyPath: m_Text
+      value: Presiona C para acceder a tu inventario
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1a2bc6ba734014d4da926591f80f5ed3, type: 3}
 --- !u!1001 &1974577260
@@ -21709,8 +21911,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2129513616}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -15.82, y: 20.28, z: -3.91}
-  m_LocalScale: {x: 2.78541, y: 1, z: 1.8479999}
+  m_LocalPosition: {x: -12.51, y: 20.28, z: -3.91}
+  m_LocalScale: {x: 2.78541, y: 1, z: 5.6310406}
   m_Children: []
   m_Father: {fileID: 1007730119}
   m_RootOrder: 4
@@ -21759,6 +21961,7 @@ MonoBehaviour:
     audioClip: {fileID: 0}
     sentence: Tal vez solo deba buscar ayuda
     mental: 1
+  startWhenSceneStarts: 0
 --- !u!33 &2129513621
 MeshFilter:
   m_ObjectHideFlags: 0
