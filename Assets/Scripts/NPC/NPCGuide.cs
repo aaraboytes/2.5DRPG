@@ -17,8 +17,8 @@ public class NPCGuide : MonoBehaviour
 
     void Update()
     {
-        float distance = Vector3.Distance(player.position, transform.position);
-        if(distance<= minDistance)
+        float distance = player.position.z - transform.position.z;
+        if(distance <= minDistance)
         {
             Vector3 dir = target.position - transform.position;
             body.velocity = dir.normalized * speed;

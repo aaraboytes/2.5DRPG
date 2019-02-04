@@ -21,13 +21,23 @@ public class PauseManager : MonoBehaviour {
 	}
 
     void Update() {
-        if (Input.GetKeyDown(KeyCode.Escape) && !inventory)
+        #region Pause and inventory manager
+        if(player.paused)
         {
-            if (pause)
+            if (Input.GetKeyDown(KeyCode.Escape) && pause)
                 Resume();
-            else
-                Pause();
+            if (Input.GetKeyDown(KeyCode.C) && inventory)
+                HideInventory();
         }
+        else
+        {
+            if (Input.GetKeyDown(KeyCode.Escape) && !inventory)
+                Pause();
+            if (Input.GetKeyDown(KeyCode.C) && !pause)
+                ShowInventory();
+        }
+        #endregion
+        #region Pause control
         if (pause)
         {
             cursor.transform.position = cursorpositions[cursorIndex].transform.position;
@@ -50,21 +60,9 @@ public class PauseManager : MonoBehaviour {
                 }
             }
         }
-        if (Input.GetKeyDown(KeyCode.I) && !pause)
-        {
-            inventory = !inventory;
-            player.paused = inventory;
-            if (inventory)
-                inventoryPanel.SetActive(true);
-            else
-                inventoryPanel.SetActive(false);
-        }
-        if (inventory)
-        {
-            if (Input.GetKeyDown(KeyCode.Escape))
-                inventory = false;
-        }
-	}
+        #endregion
+    }
+    #region Pause methods
     void Pause()
     {
         pause = true;
@@ -88,4 +86,19 @@ public class PauseManager : MonoBehaviour {
     {
         FindObjectOfType<FadeManager>().FadeOut("MainMenu");
     }
+    #endregion
+    #region Inventory methods
+    void ShowInventory()
+    {
+        inventory = true;
+        player.paused = true;
+        inventoryPanel.SetActive(true);
+    }
+    void HideInventory()
+    {
+        inventory = false;
+        player.paused = false;
+        inventoryPanel.SetActive(false);
+    }
+    #endregion
 }

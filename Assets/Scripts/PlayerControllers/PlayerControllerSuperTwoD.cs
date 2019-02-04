@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerControllerSuperTwoD : MonoBehaviour {
     public float speed;
+    public float maxSpeed;
+    public float walkTime;
     public int health;
     public GameObject z;
 
@@ -11,6 +13,7 @@ public class PlayerControllerSuperTwoD : MonoBehaviour {
     CharacterController body;
     Vector3 movement;
     Vector3 direction;
+    float timerWalking = 0;
     Animator anim;
     bool hitting = false;
 
@@ -42,8 +45,15 @@ public class PlayerControllerSuperTwoD : MonoBehaviour {
             {
                 //Input
                 movement = (Vector3.forward * Input.GetAxisRaw("Vertical")) + (Vector3.right * Input.GetAxisRaw("Horizontal"));
-                //Reinsert gravity and add speed
                 movement = movement.normalized * speed * Time.deltaTime;
+                if (movement != Vector3.zero)
+                {
+                    timerWalking += Time.deltaTime;
+                    if (timerWalking >= walkTime)
+                        movement *= maxSpeed;
+                }
+                else
+                    timerWalking = 0;
             }
             else
             {
@@ -162,6 +172,7 @@ public class PlayerControllerSuperTwoD : MonoBehaviour {
     }
     public void MakeDamage(Vector3 dir, float force)
     {
+        HPManager._instance.TurnOn();
         currentHealth--;
         HPManager._instance.DamageToPlayer();
         if(currentHealth == 0)

@@ -23,6 +23,7 @@ public class Mob : MonoBehaviour
     float attackTimer;
 
     bool chasing = false;
+    Animator anim;
 
     void Start()
     {
@@ -38,6 +39,7 @@ public class Mob : MonoBehaviour
                     currentIndex = i;
             }
         }
+        anim = GetComponent<Animator>();
     }
 
     void Update()
@@ -54,72 +56,60 @@ public class Mob : MonoBehaviour
             }
             return;
         }
-        //If player is too close
-        float distaceToPlayer = Mathf.Sqrt(Mathf.Pow(player.position.x - transform.position.x, 2) + Mathf.Pow(player.position.z - transform.position.z, 2));
-        if (distaceToPlayer <= minDistance)
-            chasing = true;
-        else
-            chasing = false;
+
+        float distaceToPlayer = Vector3.Distance(transform.position, player.position);
+        
         //Set direction vector
         Vector3 dir;
         if (chasing)
             dir = player.position - transform.position;
         else
             dir = currentPatrolPoint.position - transform.position;
-        //Move
-        body.velocity = dir.normalized * speed;
-        //Check attack
-        if (chasing)
+        dir = dir.normalized;
+        //Looking for player
+
+        if (distaceToPlayer<= minDistance)
         {
-            //Attack player
-            if(distaceToPlayer <= attackDistance)
+            RaycastHit hit;
+            Vector3 dirToPlayer = player.position - transform.position;
+            dirToPlayer.Normalize();
+            if (Physics.Raycast(transform.position, transform.TransformDirection(dirToPlayer) * 50.0f, out hit))
             {
-                //Calculate attackDirection
-                Vector3 attackDirection;
-                if (player.position.x > transform.position.x)
+                if (hit.collider.gameObject.CompareTag("Player"))
+                    chasing = true;
+            }
+            else
+            {
+                if (chasing)
                 {
-                    attackDirection = Vector3.right;
-                    float rightDistance = Mathf.Abs(player.position.x - transform.position.x);
-                    if(player.position.z > transform.position.z)
-                    {
-                        float upDistance = Mathf.Abs(player.position.z - transform.position.z);
-                        if (upDistance > rightDistance)
-                            attackDirection = Vector3.forward;
-                    }
-                    else
-                    {
-                        float downDistance = Mathf.Abs(player.position.z - transform.position.z);
-                        if (downDistance > rightDistance)
-                            attackDirection = -Vector3.forward;
-                    }
+                    chasing = false;
+                    ResetPoint();
                 }
-                else
-                {
-                    attackDirection = Vector3.left;
-                    float leftDistance = Mathf.Abs(player.position.x - transform.position.x);
-                    if (player.position.z > transform.position.z)
-                    {
-                        float upDistance = Mathf.Abs(player.position.z - transform.position.z);
-                        if (upDistance > leftDistance)
-                            attackDirection = Vector3.forward;
-                    }
-                    else
-                    {
-                        float downDistance = Mathf.Abs(player.position.z - transform.position.z);
-                        if (downDistance > leftDistance)
-                            attackDirection = -Vector3.forward;
-                    }
-                }
-                //Create hitbox
-                attackDirection *= attackDistance;
-                attackDirection += transform.position;
-                GameObject currentHitBox = Instantiate(hitBox,transform);
-                currentHitBox.transform.position = attackDirection;
-                Destroy(currentHitBox, 2.0f);
-                //Set that is attacking
-                isAttacking = true;
             }
         }
+        else
+        {
+            if (chasing)
+            {
+                chasing = false;
+                ResetPoint();
+            }
+        }
+
+        //Move
+        body.velocity = dir * speed;
+        //Set anim
+        anim.SetFloat("right", dir.x);
+        anim.SetFloat("up", dir.z);
+        //Attack
+        if (chasing && distaceToPlayer <= attackDistance)
+        {
+            GameObject hb = Instantiate(hitBox,transform);
+            Vector3 hbPos = transform.position + dir * attackDistance;
+            hb.transform.position = hbPos;
+            isAttacking = true;
+        }
+        Debug.Log(distaceToPlayer);
     }
 
     public void MoveToTheNextPoint()
@@ -129,5 +119,61 @@ public class Mob : MonoBehaviour
         if (currentIndex >= patrolPoints.Length)
             currentIndex = 0;
         currentPatrolPoint = patrolPoints[currentIndex];
+    }
+
+    public void ResetPoint()
+    {
+        int minDistIndex = 0;
+        float currentDist = 0;
+        for(int i = 0; i < patrolPoints.Length; i++)
+        {
+            float distance = Vector3.Distance(transform.position, patrolPoints[i].position);
+            if (distance < currentDist)
+            {
+                currentDist = distance;
+                minDistIndex = i;
+            }
+        }
+        currentPatrolPoint = patrolPoints[minDistIndex];
+    }
+
+    Vector3 CalculateAttackDirection()
+    {
+        Vector3 attackDirection;
+        if (player.position.x > transform.position.x)
+        {
+            attackDirection = Vector3.right;
+            float rightDistance = Mathf.Abs(player.position.x - transform.position.x);
+            if (player.position.z > transform.position.z)
+            {
+                float upDistance = Mathf.Abs(player.position.z - transform.position.z);
+                if (upDistance > rightDistance)
+                    attackDirection = Vector3.forward;
+            }
+            else
+            {
+                float downDistance = Mathf.Abs(player.position.z - transform.position.z);
+                if (downDistance > rightDistance)
+                    attackDirection = Vector3.back;
+            }
+        }
+        else
+        {
+            attackDirection = Vector3.left;
+            float leftDistance = Mathf.Abs(player.position.x - transform.position.x);
+            if (player.position.z > transform.position.z)
+            {
+                float upDistance = Mathf.Abs(player.position.z - transform.position.z);
+                if (upDistance > leftDistance)
+                    attackDirection = Vector3.forward;
+            }
+            else
+            {
+                float downDistance = Mathf.Abs(player.position.z - transform.position.z);
+                if (downDistance > leftDistance)
+                    attackDirection = Vector3.back;
+            }
+        }
+        return attackDirection;
     }
 }

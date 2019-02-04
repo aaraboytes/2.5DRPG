@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 4282640762563011660}
   - component: {fileID: 4282640762563011651}
   - component: {fileID: 4282640762563011650}
-  - component: {fileID: 4282640762563011649}
   - component: {fileID: 4282640762563011648}
+  - component: {fileID: 551796270287893445}
+  - component: {fileID: 3052131874488050017}
   m_Layer: 0
   m_Name: Mob
   m_TagString: Mob
@@ -71,7 +72,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 372a7882094fb7e4181b3537d5ab29ad, type: 3}
+  m_Sprite: {fileID: 21300030, guid: baa7723f0a447dd4ebf1ddb2739a62e3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -98,20 +99,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!136 &4282640762563011649
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4282640762563011655}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 2.155
-  m_Height: 5.31
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &4282640762563011648
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -125,9 +112,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   life: 3
-  speed: 1
-  minDistance: 3
-  attackDistance: 1
+  speed: 3
+  minDistance: 7
+  attackDistance: 1.5
   patrolPoints:
   - {fileID: 0}
   - {fileID: 0}
@@ -136,3 +123,36 @@ MonoBehaviour:
   hitBox: {fileID: 8807076155825072586, guid: 125e5a2b3a7ad53458e0c33daff3a00f, type: 3}
   attackTime: 2
   currentPatrolPoint: {fileID: 0}
+--- !u!95 &551796270287893445
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4282640762563011655}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 37fe06afb1e433942aa1f7b4446899ba, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!136 &3052131874488050017
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4282640762563011655}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 2.18
+  m_Height: 5.2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}

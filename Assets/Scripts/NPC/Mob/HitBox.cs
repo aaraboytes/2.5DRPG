@@ -45,7 +45,7 @@ public class HitBox : MonoBehaviour
                 }
             }
             other.GetComponent<PlayerControllerSuperTwoD>().MakeDamage(attackDirection,force);
-            gameObject.SetActive(false);
+            GetComponent<BoxCollider>().enabled = false;
         }
     }
 }

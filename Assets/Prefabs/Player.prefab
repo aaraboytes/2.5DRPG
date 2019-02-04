@@ -196,6 +196,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
+  maxSpeed: 2.5
+  walkTime: 2
   health: 5
   z: {fileID: 1984862592}
   paused: 0

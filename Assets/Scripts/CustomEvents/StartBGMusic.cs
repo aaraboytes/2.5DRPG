@@ -7,7 +7,10 @@ public class StartBGMusic : GameEvent
     public AudioClip audio;
     public override void StartEvent()
     {
-        GameManager._instance.SetBGMusic(audio);
-        GameManager._instance.PlayBGMusic();
+        if (GameManager._instance.gameObject.GetComponent<AudioSource>().clip != audio)
+        {
+            GameManager._instance.SetBGMusic(audio);
+            GameManager._instance.PlayBGMusic();
+        }
     }
 }
