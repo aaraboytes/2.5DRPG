@@ -1935,6 +1935,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 7234879227e1be64399a73944880b12d, type: 2}
   - {fileID: 11400000, guid: 066a63484daa1cd46b4bea8aeda4ecb1, type: 2}
   - {fileID: 11400000, guid: 0ed01069cb9dd8540acf310a6159d2c6, type: 2}
+  - {fileID: 11400000, guid: ac5149c8e0fb5f74893df84ac920eabd, type: 2}
   defaultBGImage: {fileID: 21300000, guid: bcfbabefd5de8f9408d9d8ad168270cd, type: 3}
   infoImage: {fileID: 2416546820973354669}
   infoText: {fileID: 2416546821371836200}
@@ -5349,7 +5350,7 @@ MonoBehaviour:
   m_Inertia: 1
   m_DecelerationRate: 0.135
   m_ScrollSensitivity: 1
-  m_Viewport: {fileID: 0}
+  m_Viewport: {fileID: 2416546821805309719}
   m_HorizontalScrollbar: {fileID: 0}
   m_VerticalScrollbar: {fileID: 0}
   m_HorizontalScrollbarVisibility: 0

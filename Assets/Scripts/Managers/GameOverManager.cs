@@ -7,6 +7,7 @@ public class GameOverManager : MonoBehaviour
 {
     public void Continue()
     {
+        GameManager._instance.loadData = true;
         GameManager._instance.LoadSavedScene();
     }
     public void ExitGame()

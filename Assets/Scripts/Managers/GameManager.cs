@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour {
     PlayerData currentPlayerData;
     PlayerControllerSuperTwoD player;
     public Vector3 playerPos;
+    [SerializeField]
     List<int> currentItems = new List<int>();
     int currentHealth = 5;
     int currentPages = 0;

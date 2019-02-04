@@ -8,12 +8,14 @@ public class mainMenuManager : MonoBehaviour
 {
     string path;
     public GameObject continueButton;
+    public GameObject deletePanel;
     private void Start()
     {
         path = Application.persistentDataPath + "/save.owo";
-        if (File.Exists(path))
+        Debug.Log(path);
+        if (!File.Exists(path))
         {
-            continueButton.SetActive(true);
+            continueButton.SetActive(false);
         }
     }
     public void NewGame()
@@ -23,7 +25,21 @@ public class mainMenuManager : MonoBehaviour
     }
     public void Continue()
     {
+        GameManager._instance.loadData = true;
         GameManager._instance.LoadSavedScene();
+    }
+    public void Delete()
+    {
+        deletePanel.SetActive(true);
+    }
+    public void DeleteSaveData()
+    {
+        File.Delete(path);
+        FindObjectOfType<FadeManager>().FadeOut("MainMenu");
+    }
+    public void CancelDelete()
+    {
+        deletePanel.SetActive(false);
     }
     public void Quit()
     {

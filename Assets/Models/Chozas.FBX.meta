@@ -8,10 +8,9 @@ ModelImporter:
     2100000: LowPoly_Tree_v1_trunks_color_LPTree1
     2100002: LowPoly_Tree_v1_leaves_color_LPTree1
     2100004: 'Material #14'
-    2100006: Torch_VRayMtl3SG
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Cylinder002
+    4300000: Arbol
   externalObjects: {}
   materials:
     importMaterials: 1

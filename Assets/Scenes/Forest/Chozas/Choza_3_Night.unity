@@ -940,7 +940,7 @@ PrefabInstance:
     - target: {fileID: 3998339776729643706, guid: 31808c0330fe34245a8f80a2ce1cca5d,
         type: 3}
       propertyPath: nextPlayerPos.z
-      value: -6.5
+      value: -6.3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31808c0330fe34245a8f80a2ce1cca5d, type: 3}

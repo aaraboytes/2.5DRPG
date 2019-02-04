@@ -112,12 +112,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!4 &27847539 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3998339776729643703, guid: 31808c0330fe34245a8f80a2ce1cca5d,
-    type: 3}
-  m_PrefabInstance: {fileID: 1713449209}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &32565857 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 5c5a5a4c998ce004cbf055fb76ac2acc,
@@ -2530,6 +2524,36 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1780552512}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &502594887
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 502594888}
+  m_Layer: 0
+  m_Name: EndPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &502594888
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 502594887}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 2.03, z: -49.51}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &516944687 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 5c5a5a4c998ce004cbf055fb76ac2acc,
@@ -5607,7 +5631,7 @@ MonoBehaviour:
     sentence: "No te preocupes, el viejo sabio te ayudar\xE1."
     mental: 1
   speed: 1.5
-  target: {fileID: 27847539}
+  target: {fileID: 502594888}
 --- !u!114 &1007730121
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10783,7 +10807,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 507f004f076079141b3386b09dff491b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 27847539}
+  target: {fileID: 502594888}
   speed: 2
   minDistance: 1
 --- !u!1001 &2051686654
