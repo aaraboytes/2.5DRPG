@@ -6,21 +6,30 @@ public class TriggerStartAnimation : MonoBehaviour
 {
     public string triggersName;
     public AudioClip clip;
+    public GameObject go;
+    public bool audioPlay = true;
     Animator anim;
     AudioSource audio;
     private void Start()
     {
-        anim = GetComponent<Animator>();
-        audio = GetComponent<AudioSource>();
-        audio.clip = clip;
-        audio.loop = false;
-        audio.playOnAwake = false;
+        if (go == null)
+            anim = GetComponent<Animator>();
+        else
+            anim = go.GetComponent<Animator>();
+        if (audioPlay)
+        {
+            audio = GetComponent<AudioSource>();
+            audio.clip = clip;
+            audio.loop = false;
+            audio.playOnAwake = false;
+        }
     }
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            audio.PlayOneShot(clip, 0.4f);
+            if(audioPlay)
+                audio.PlayOneShot(clip, 0.4f);
             anim.SetTrigger(triggersName);
         }
     }

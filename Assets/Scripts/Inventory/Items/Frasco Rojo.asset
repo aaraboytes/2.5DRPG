@@ -16,4 +16,4 @@ MonoBehaviour:
   itemImg: {fileID: 21300000, guid: c4042ecff0e226a44a92564df680cb03, type: 3}
   description: Tiene efectos adversos en los Slothman
   usable: 0
-  droppeable: 0
+  droppeable: 1
