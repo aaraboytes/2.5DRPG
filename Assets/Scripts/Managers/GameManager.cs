@@ -24,6 +24,7 @@ public class GameManager : MonoBehaviour {
         else if(_instance!=this)
             Destroy(gameObject);
         DontDestroyOnLoad(gameObject);
+        audio = GetComponent<AudioSource>();
     }
     private void Start()
     {
@@ -33,7 +34,7 @@ public class GameManager : MonoBehaviour {
             player = FindObjectOfType<PlayerControllerSuperTwoD>();
         if (player)
             playerPos = player.transform.position;
-        audio = GetComponent<AudioSource>();
+        
     }
     #region Load player info
     public void SetCurrentPlayerData(PlayerData pd)
@@ -117,7 +118,7 @@ public class GameManager : MonoBehaviour {
     #region Audio
     public void SetBGMusic(AudioClip music)
     {
-        if(audio.clip!=music)
+        if(audio.clip != music)
             audio.clip = music;
     }
     public void PlayBGMusic() { audio.loop = true; audio.Play(); }

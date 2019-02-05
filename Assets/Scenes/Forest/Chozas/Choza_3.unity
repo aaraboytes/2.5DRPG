@@ -1720,7 +1720,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db3c00b1f90b9ea419284514be068e19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newPos: {x: 0, y: 0.9, z: 0}
+  newPos: {x: 0, y: 0.5, z: 0}
   anotherScene: Choza_5Cinematic
 --- !u!1 &1635069735
 GameObject:

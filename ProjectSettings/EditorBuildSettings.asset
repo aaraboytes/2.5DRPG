@@ -102,6 +102,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Cave/Cave.unity
     guid: da91e646ed6ee5d49b9d1bb994f2301b
   - enabled: 1
+    path: Assets/Scenes/Cave/Cave_2.unity
+    guid: a1bcea222a0b44545b11be0ab0efeff7
+  - enabled: 1
     path: Assets/Scenes/Cave/CaveToLab.unity
     guid: b74f92d112a7203429dc7aaed5bac33a
   - enabled: 0

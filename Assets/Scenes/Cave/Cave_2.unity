@@ -1374,7 +1374,7 @@ PrefabInstance:
     - target: {fileID: 3998339776729643703, guid: 31808c0330fe34245a8f80a2ce1cca5d,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3998339776729643703, guid: 31808c0330fe34245a8f80a2ce1cca5d,
         type: 3}
@@ -1404,17 +1404,17 @@ PrefabInstance:
     - target: {fileID: 3998339776729643706, guid: 31808c0330fe34245a8f80a2ce1cca5d,
         type: 3}
       propertyPath: nextScene
-      value: Cueva_3
+      value: CaveToLab
       objectReference: {fileID: 0}
     - target: {fileID: 3998339776729643706, guid: 31808c0330fe34245a8f80a2ce1cca5d,
         type: 3}
       propertyPath: nextPlayerPos.x
-      value: 0
+      value: -5
       objectReference: {fileID: 0}
     - target: {fileID: 3998339776729643706, guid: 31808c0330fe34245a8f80a2ce1cca5d,
         type: 3}
       propertyPath: nextPlayerPos.y
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 3998339776729643706, guid: 31808c0330fe34245a8f80a2ce1cca5d,
         type: 3}
@@ -2747,7 +2747,7 @@ PrefabInstance:
     - target: {fileID: 8247352975570609937, guid: 9b8ea7f0a71365a4cb304d96357bb2b5,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8247352975570609937, guid: 9b8ea7f0a71365a4cb304d96357bb2b5,
         type: 3}
@@ -6451,7 +6451,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5839449f1ea8d204693971a781fd5c30, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5839449f1ea8d204693971a781fd5c30, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -6872,6 +6872,81 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6152702241000187135, guid: 264595821a184e4468634abca2c56e91,
     type: 3}
   m_PrefabInstance: {fileID: 535775011}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &537985647
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1839403935}
+    m_Modifications:
+    - target: {fileID: 100000, guid: 7b5f2f9ea19c74c659ab8ac969280fb2, type: 3}
+      propertyPath: m_Name
+      value: rock2 (20)
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 7b5f2f9ea19c74c659ab8ac969280fb2, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 103
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 7b5f2f9ea19c74c659ab8ac969280fb2, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 7b5f2f9ea19c74c659ab8ac969280fb2, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -4.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 7b5f2f9ea19c74c659ab8ac969280fb2, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.00000013064276
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 7b5f2f9ea19c74c659ab8ac969280fb2, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.9127972
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 7b5f2f9ea19c74c659ab8ac969280fb2, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.00000029198458
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 7b5f2f9ea19c74c659ab8ac969280fb2, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.40841323
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 7b5f2f9ea19c74c659ab8ac969280fb2, type: 3}
+      propertyPath: m_RootOrder
+      value: 39
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 7b5f2f9ea19c74c659ab8ac969280fb2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 7b5f2f9ea19c74c659ab8ac969280fb2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 131.79001
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 7b5f2f9ea19c74c659ab8ac969280fb2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 7b5f2f9ea19c74c659ab8ac969280fb2, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 9.261672
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 7b5f2f9ea19c74c659ab8ac969280fb2, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 9.261627
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 7b5f2f9ea19c74c659ab8ac969280fb2, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 9.261672
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7b5f2f9ea19c74c659ab8ac969280fb2, type: 3}
+--- !u!4 &537985648 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 400000, guid: 7b5f2f9ea19c74c659ab8ac969280fb2,
+    type: 3}
+  m_PrefabInstance: {fileID: 537985647}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &538250435
 PrefabInstance:
@@ -9026,6 +9101,98 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 709445879}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &732872347
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 732872351}
+  - component: {fileID: 732872350}
+  - component: {fileID: 732872349}
+  - component: {fileID: 732872348}
+  m_Layer: 0
+  m_Name: Plane (6)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!64 &732872348
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 732872347}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &732872349
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 732872347}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: d67cf08569282495b9b0b750a0366fcf, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!33 &732872350
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 732872347}
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &732872351
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 732872347}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 117.13, y: -5.2100005, z: -11.024}
+  m_LocalScale: {x: 3.448495, y: 1, z: 3.205}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 30
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &734736400
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11323,8 +11490,13 @@ MonoBehaviour:
   - photo: {fileID: 21300004, guid: 372a7882094fb7e4181b3537d5ab29ad, type: 3}
     name: 
     audioClip: {fileID: 8300000, guid: 0d852b68a495900498cadb409f84c72d, type: 3}
-    sentence: "Toma lo que necesites, m\xE1s adelante te dir\xE9 qu\xE9 es lo que
-      har\xE1s."
+    sentence: "Toma todo lo que necesites, te infiltrar\xE1s en la guarida del pacto
+      de la mano para destruir su m\xE1quina"
+    mental: 0
+  - photo: {fileID: 21300004, guid: 372a7882094fb7e4181b3537d5ab29ad, type: 3}
+    name: 
+    audioClip: {fileID: 8300000, guid: 0d852b68a495900498cadb409f84c72d, type: 3}
+    sentence: "as\xED que asegurate de estar bien armado."
     mental: 0
 --- !u!136 &906025547
 CapsuleCollider:
@@ -16827,7 +16999,7 @@ PrefabInstance:
     - target: {fileID: 2416546820615787815, guid: 88fd66bf67fb52f439520519b84ff8c8,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2416546820615787815, guid: 88fd66bf67fb52f439520519b84ff8c8,
         type: 3}
@@ -22075,7 +22247,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7643d023f1b73f345b1dceaa74024003, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audio: {fileID: 8300000, guid: c70d989a6c1fe824bb986d02db75219f, type: 3}
+  audio: {fileID: 8300000, guid: 4638b1893a67e4748a0682676c283c8f, type: 3}
+  playOnSceneStart: 1
 --- !u!4 &1720193714
 Transform:
   m_ObjectHideFlags: 0
@@ -24007,8 +24180,9 @@ Transform:
   - {fileID: 1147542100}
   - {fileID: 709445880}
   - {fileID: 1815604592}
+  - {fileID: 537985648}
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1853816960
 PrefabInstance:
@@ -25555,10 +25729,16 @@ MonoBehaviour:
       rehabitar el planeta."
     mental: 0
   - photo: {fileID: 21300004, guid: 372a7882094fb7e4181b3537d5ab29ad, type: 3}
-    name: 
+    name: ???
     audioClip: {fileID: 8300000, guid: 0d852b68a495900498cadb409f84c72d, type: 3}
     sentence: Sin embargo es mas probable que sea destruido el espacio tiempo tal
-      y como se conoce, a que este experimento sea exitoso.
+      y como se conoce
+    mental: 0
+  - photo: {fileID: 21300004, guid: 372a7882094fb7e4181b3537d5ab29ad, type: 3}
+    name: ???
+    audioClip: {fileID: 8300000, guid: 0d852b68a495900498cadb409f84c72d, type: 3}
+    sentence: a que el experimento de un resultado garantizado, eres una de dos millones
+      de pruebas.
     mental: 0
   - photo: {fileID: 21300004, guid: 372a7882094fb7e4181b3537d5ab29ad, type: 3}
     name: ???
@@ -25566,7 +25746,7 @@ MonoBehaviour:
     sentence: "Por ello, necesito tu ayuda y a cambio podr\xE1s volver a tu \xE9poca."
     mental: 0
   - photo: {fileID: 21300012, guid: 7cd552900f8df054595fc18d446d930b, type: 3}
-    name: ???
+    name: 
     audioClip: {fileID: 8300000, guid: c19a5850ad7ada6458d6a573ed492111, type: 3}
     sentence: "\xA1Acepto! Estoy dispuesto a lo que sea por regresar y ayudarte."
     mental: 0
