@@ -18,6 +18,12 @@ EditorBuildSettings:
     path: Assets/Scenes/ToBeContinued.unity
     guid: 0939afcdc8d8e5a4aa3166c06ee8c560
   - enabled: 1
+    path: Assets/Scenes/goodEnding.unity
+    guid: 770be745211d6e74ead9e42403c507d0
+  - enabled: 1
+    path: Assets/Scenes/badEnding.unity
+    guid: 3285a3eddf030be41b79681d83903a34
+  - enabled: 1
     path: Assets/Scenes/Hospital/Pasillo_1.unity
     guid: e2cfa72b4cc22874fbd90982c388b09f
   - enabled: 1
@@ -49,7 +55,7 @@ EditorBuildSettings:
     guid: 559f208fc19556d41bfe0d5d7205c593
   - enabled: 1
     path: Assets/Scenes/Forest/Aldea_night.unity
-    guid: c74d0f2a946d2ac4e8bc4a9d5bb3e2f1
+    guid: 1ea5d432037327d4a800b35509e52a58
   - enabled: 1
     path: Assets/Scenes/Forest/Chozas/Choza_1_Night.unity
     guid: 96da82b80f121ad419da17622edee11e
@@ -107,6 +113,39 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Cave/CaveToLab.unity
     guid: b74f92d112a7203429dc7aaed5bac33a
+  - enabled: 1
+    path: Assets/Scenes/Laboratory/Laboratory_Pasillo_1.unity
+    guid: 62a18e975f04b6348b07f03bd6bbd9ae
+  - enabled: 1
+    path: Assets/Scenes/Laboratory/Laboratory_Pasillo_2.unity
+    guid: 84c1ad1125cb7b94192f056ea12a4762
+  - enabled: 1
+    path: Assets/Scenes/Laboratory/Laboratory_Pasillo_3.unity
+    guid: 989714f419504874ba0e680eeb618b56
+  - enabled: 1
+    path: Assets/Scenes/Laboratory/Laboratory_Pasillo_4.unity
+    guid: 1dea7567aaedabf488f551ebf04e14f2
+  - enabled: 1
+    path: Assets/Scenes/Laboratory/Laboratory_Lab_BadEnding.unity
+    guid: 1ca6f7ccfafc34e49aa0330baead01e1
+  - enabled: 1
+    path: Assets/Scenes/Laboratory/Laboratory_Lab_GoodEnding.unity
+    guid: c44e6349ea49b244fb876a436a97f7fa
+  - enabled: 1
+    path: Assets/Scenes/Laboratory/Laboratory_Lab_Machine.unity
+    guid: e65cd69aa187f264e922a10acdb28c2e
+  - enabled: 1
+    path: Assets/Scenes/Laboratory/TimeMachine.unity
+    guid: f249366556598c64483e885ab6234fd2
+  - enabled: 1
+    path: Assets/Scenes/Laboratory/DestroyedScenes/Aldea_night_destroyed.unity
+    guid: c74d0f2a946d2ac4e8bc4a9d5bb3e2f1
+  - enabled: 1
+    path: Assets/Scenes/Laboratory/DestroyedScenes/Forest_1_Destroyed.unity
+    guid: bd6bc07de4b9f4c4f8093a1486f97d1b
+  - enabled: 1
+    path: Assets/Scenes/Laboratory/DestroyedScenes/Forest_6_Destroyed.unity
+    guid: 4e0bee2c69d7aa64c9153834dd5bde76
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000

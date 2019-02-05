@@ -744,7 +744,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50dab8305aea5304cb2a97180651a9e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextScene: ToBeContinued
+  nextScene: Laboratory_Pasillo_1
   nextPosition: {x: 0, y: 0.5, z: 0}
   anim: {fileID: 1766878675}
   clip: {fileID: 8300000, guid: 7664aa6a4b928fc4ba20415701f11393, type: 3}
